@@ -78,12 +78,6 @@ $headerHeight: clamp(68px, 9vw, 90px);
 
     // .header__nav
     &__nav {
-        margin-right: auto;
-        margin-left: 30px;
-
-        @media screen and (max-width: $breakpoint1200) {
-            margin-left: 0;
-        }
 
         @media screen and (max-width: $burgerBreakpoint) {
             display: none;
@@ -92,13 +86,13 @@ $headerHeight: clamp(68px, 9vw, 90px);
 
     // .header__menu
     &__menu {
-        $menuGap: clamp(20px, 2vw, 40px);
+        $menuGap: clamp(30px, 4vw, 100px);
 
         display: flex;
         align-items: center;
         gap: $menuGap;
 
-        font-size: clamp(15px, 1.5vw, 16px);
+        font-size: clamp(14px, 1.2vw, 16px);
         font-weight: 600;
         color: $colorWhite;
 
@@ -107,20 +101,6 @@ $headerHeight: clamp(68px, 9vw, 90px);
             display: flex;
             align-items: center;
             gap: $menuGap;
-
-            &::after {
-                content: '';
-                line-height: inherit;
-                height: 1lh;
-                width: 1px;
-                background-color: rgba($color: $colorWhite, $alpha: .2);
-            }
-
-            &:last-child {
-                &::after {
-                    display: none;
-                }
-            }
 
             &:hover {
                 color: $colorWhite;
