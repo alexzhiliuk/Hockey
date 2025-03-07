@@ -1,0 +1,147 @@
+.table {
+
+    overflow-x: auto;
+    width: 100%;
+    @include removeScrollbar;
+
+    &_shadow {
+        &_right {
+            
+            position: relative;
+            &::after {
+                transition: none;
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: var(--right-shadow, 0);
+                width: 40px;
+                background: linear-gradient(270deg, #FFFFFF 29%, rgba(255, 255, 255, 0) 100%);
+            }
+
+        }
+        &_left {
+
+            position: relative;
+            &::before {
+                transition: none;
+                content: '';
+                position: absolute;
+                top: 0;
+                left: var(--left-shadow, 0);
+                bottom: 0;
+                width: 40px;
+                background: linear-gradient(90deg, #FFFFFF 29%, rgba(255, 255, 255, 0) 100%);
+            }
+
+        }
+    }
+
+    &__wrapper {
+        border: 1px solid $colorBorder;
+        border-radius: 10px;
+        min-width: 100%;
+        width: max-content;
+        overflow: hidden;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+
+        thead {
+            th {
+                background-color: $colorTableRow;
+                padding: 15px 20px;
+                border: 1px solid $colorBorder;
+                border-top: none;
+
+                font-size: clamp(11px, 1.4vw, 14px);
+
+                @media screen and (max-width: $breakpoint576) {
+                    padding: 10px 8px;
+                }
+
+                &:first-child {
+                    border-left: none;
+                }
+                &:last-child {
+                    border-right: none;
+                }
+            }
+        }
+
+        tbody {
+
+            td {
+                padding: 10px 20px;
+                font-size: clamp(10px, 1.6vw, 16px);
+                border-right: 1px solid $colorBorder;
+                border-left: 1px solid $colorBorder;
+
+                @media screen and (max-width: $breakpoint576) {
+                    padding: 10px 8px;
+                }
+
+                &:first-child {
+                    border-left: none;
+                }
+                &:last-child {
+                    border-right: none;
+                }
+            }
+
+            tr {
+                &:nth-child(even) {
+                    td {
+                        background-color: $colorTableRow;
+                    }
+                }
+            }
+        }
+    }
+
+    // .table__with-avatar
+    &__with-avatar {
+
+        & > * {
+            display: flex;
+            align-items: center;
+            gap: clamp(10px, 2vw, 20px);
+
+            width: 100%;
+            height: 100%;
+        }
+
+        a {
+
+            font-weight: 600;
+    
+            img {
+                border-radius: 50%;
+                overflow: hidden;
+                width: clamp(40px, 5.6vw, 56px);
+                height: clamp(40px, 5.6vw, 56px);
+                object-fit: contain;
+                object-position: center;
+            }
+
+            &:hover {
+                color: $colorPrimary;
+            }
+        }
+
+        &_mobile-remove {
+            @media screen and (max-width: $breakpoint576) {
+                img {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__num {
+        width: clamp(30px, 4.3vw, 43px);
+        padding-left: 10px;
+    }
+}

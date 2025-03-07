@@ -1,0 +1,40 @@
+.breadcrumbs {
+
+    background-color: $colorBreadcrumbs;
+    padding: 20px 0;
+
+    font-size: 16px;
+    font-weight: 500;
+    
+
+    // .breadcrumbs__container
+    &__container {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    // .breadcrumbs__item
+    &__item {
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            color: $colorPrimary;
+        }
+
+        &::after {
+            content: '/';
+            margin-left: 16px;
+            color: $colorBlack;
+        }
+
+        &:last-child {
+            color: $colorGray;
+            &::after {
+                display: none;
+            }
+        }
+    }
+}

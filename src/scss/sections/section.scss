@@ -1,0 +1,35 @@
+.section {
+
+    display: flex;
+    flex-direction: column;
+    gap: clamp(30px, 4vw, 40px);
+
+    // .section__tabs
+    &__tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: clamp(16px, 6vw, 60px);
+
+        .section__title {
+            padding-bottom: clamp(10px, 2vw, 20px);
+            color: $colorGray;
+
+            &_active {
+                color: $colorBlack;
+                border-bottom: 4px solid $colorPrimary;
+            }
+        }
+    }
+
+    // .section__title
+    &__title {
+        
+    }
+
+    // .section__body
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(20px, 4vw, 40px);
+    }
+}

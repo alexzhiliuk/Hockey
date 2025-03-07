@@ -1,0 +1,116 @@
+<section class="section container">
+    <div class="section__tabs">
+        <h2 class="section__title section__title_active title">Турнирная таблица</h2>
+        <a href="" class="section__title title">Плей-офф</a>
+    </div>
+    <div class="section__body">
+        <div class="select-tabs">
+            <button class="select-tabs__item select-tabs__item_active">Высшая лига</button>
+            <button class="select-tabs__item">Первая лига</button>
+            <button class="select-tabs__item">Вторая лига</button>
+            <button class="select-tabs__item">Челлендж лига</button>
+        </div>
+        <div class="table">
+            <div class="table__wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="table__num"></th>
+                            <th align="left">Команда</th>
+                            <th>И</th>
+                            <th>В</th>
+                            <th>ВБ</th>
+                            <th>ПБ</th>
+                            <th>П</th>
+                            <th>Ш</th>
+                            <th>О</th>
+                            <th>%</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td class="table__with-avatar table__with-avatar_mobile-remove">
+                                <a href="">
+                                    <img src="@img/teams/02.png" alt="">
+                                    Столица
+                                </a>
+                            </td>
+                            <td align="center">21</td>
+                            <td align="center">20</td>
+                            <td align="center">0</td>
+                            <td align="center">0</td>
+                            <td align="center">0</td>
+                            <td align="center">168:80</td>
+                            <td align="center">61</td>
+                            <td align="center">91</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td class="table__with-avatar table__with-avatar_mobile-remove">
+                                <a href="">
+                                    <img src="@img/teams/02.png" alt="">
+                                    Столица
+                                </a>
+                            </td>
+                            <td align="center">21</td>
+                            <td align="center">20</td>
+                            <td align="center">0</td>
+                            <td align="center">0</td>
+                            <td align="center">0</td>
+                            <td align="center">168:80</td>
+                            <td align="center">61</td>
+                            <td align="center">91</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function checkHorizontalScroll(element) {
+        const canScroll = element[0].scrollWidth > element[0].clientWidth;
+        const isAtStart = element.scrollLeft() === 0;
+        const isAtEnd = element.scrollLeft() + element[0].clientWidth >= element[0].scrollWidth - 1;
+
+        return {
+            canScroll: canScroll, // Можно ли скролить
+            isAtStart: isAtStart, // Доскролен ли до начала
+            isAtEnd: isAtEnd      // Доскролен ли до конца
+        };
+    }
+
+    function toggleClasses(element, scrollInfo) {
+        if (scrollInfo.canScroll) {
+            if (scrollInfo.isAtStart) {
+                element.addClass("table_shadow_right").removeClass("table_shadow_left")
+            } else if (scrollInfo.isAtEnd) {
+                element.addClass("table_shadow_left").removeClass("table_shadow_right")
+            } else {
+                element.addClass("table_shadow_left").addClass("table_shadow_right")
+            }
+
+            var scroll = element.scrollLeft()
+            element.css("--right-shadow", `-${scroll}px`)
+            element.css("--left-shadow", `${scroll}px`)
+        } else {
+            element.removeClass("table_shadow_left").removeClass("table_shadow_right")
+        }
+    }
+
+    var element = $('.table');
+    var scrollInfo = checkHorizontalScroll(element);
+
+    toggleClasses(element, scrollInfo);
+
+    element.on('scroll', function() {
+        var scrollInfo = checkHorizontalScroll(element);
+        toggleClasses(element, scrollInfo);
+    });
+    $(window).resize(function() {
+        var scrollInfo = checkHorizontalScroll(element);
+        toggleClasses(element, scrollInfo);
+    });
+</script>

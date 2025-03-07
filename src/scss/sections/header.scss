@@ -1,0 +1,204 @@
+$headerHeight: clamp(68px, 9vw, 90px);
+
+.header {
+
+    height: $headerHeight;
+    background-color: $colorDarkblue;
+    position: sticky;
+    top: 0;
+    z-index: $headerLayer;
+
+    padding: 10px 0;
+
+    @media screen and (max-width: $burgerBreakpoint) {
+        &_open {
+            height: 100dvh;
+            width: 100vw;
+            
+            overflow-y: auto;
+            overflow-x: clip;
+
+            @include removeScrollbar;
+
+            .header__container {
+
+                min-height: 100%;
+
+                align-items: flex-start;
+                flex-wrap: wrap;
+            }
+
+            .header__nav {
+                order: 3;
+                flex: 0 0 100%;
+                margin-bottom: 40px;
+                display: block;
+            }
+
+            .header__menu {
+                flex-direction: column;
+                gap: clamp(30px, 6vw, 60px);
+                font-size: clamp(16px, 2.4vw, 24px);
+                
+                li {
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+
+            .header__socials {
+                display: flex;
+                order: 4;
+                flex: 0 0 100%;
+                margin-top: auto;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    // .header__container
+    &__container {
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+
+    }
+
+    // .header__logo
+    &__logo {
+        order: 0;
+        img {
+            height: calc($headerHeight - 20px);
+            display: block;
+        }
+    }
+
+    // .header__nav
+    &__nav {
+        margin-right: auto;
+        margin-left: 30px;
+
+        @media screen and (max-width: $breakpoint1200) {
+            margin-left: 0;
+        }
+
+        @media screen and (max-width: $burgerBreakpoint) {
+            display: none;
+        }
+    }
+
+    // .header__menu
+    &__menu {
+        $menuGap: clamp(20px, 2vw, 40px);
+
+        display: flex;
+        align-items: center;
+        gap: $menuGap;
+
+        font-size: clamp(15px, 1.5vw, 16px);
+        font-weight: 600;
+        color: $colorWhite;
+
+        li {
+
+            display: flex;
+            align-items: center;
+            gap: $menuGap;
+
+            &::after {
+                content: '';
+                line-height: inherit;
+                height: 1lh;
+                width: 1px;
+                background-color: rgba($color: $colorWhite, $alpha: .2);
+            }
+
+            &:last-child {
+                &::after {
+                    display: none;
+                }
+            }
+
+            &:hover {
+                color: $colorWhite;
+            }
+        }
+    }
+
+    // .header__socials
+    &__socials {
+        @media screen and (max-width: $burgerBreakpoint) {
+            display: none;
+        }
+    }
+
+    // .header__burger
+    &__burger {
+        position: absolute;
+        right: $containerPadding;
+        top: calc($headerHeight / 2);
+        translate: calc(55% / 2) -50%;
+    }
+}
+
+.burger {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (min-width: $burgerBreakpoint) {
+        display: none;
+    }
+
+    span {
+        height: 2px;
+        width: 45%;
+        border-radius: 1px;
+        background-color: $colorWhite;
+        position: relative;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;right: 0;
+            height: 2px;
+            border-radius: 1px;
+            background-color: $colorWhite;
+        }
+
+        &::before {
+            top: -3px;
+            translate: 0 -100%;
+        }
+
+        &::after {
+            bottom: -3px;
+            translate: 0 100%;
+        }
+    }
+
+    &_active {
+        span {
+            background-color: transparent;
+
+            &::before {
+                rotate: 45deg;
+                top: 50%;
+                translate: 0 -50%;
+            }
+    
+            &::after {
+                rotate: -45deg;
+                bottom: 50%;
+                translate: 0 50%;
+            }
+        }
+    }
+}

@@ -1,0 +1,110 @@
+$verticalPadding: clamp(10px, 2vw, 20px);
+$sliderWidth: 1920px;
+$shadowHideBreakpoint: 1700px;
+
+.last-matches {
+
+    background: $colorSecondary;
+
+    &__container {
+        overflow: hidden;
+        max-width: $sliderWidth;
+        width: 100%;
+        margin: 0 auto;
+
+        position: relative;
+
+        
+        @media screen and (min-width: $shadowHideBreakpoint) {
+            &::before {
+                content: '';
+                position: absolute;
+                z-index: 2;
+                background: linear-gradient(270deg, rgba(236, 236, 236, 0) 0%, #ECECEC 100%);
+                top: $verticalPadding;
+                bottom: $verticalPadding;
+                left: 0;
+                width: 135px;
+                pointer-events: none;
+            }
+    
+            &::after {
+                content: '';
+                position: absolute;
+                z-index: 2;
+                background: linear-gradient(90deg, rgba(236, 236, 236, 0) 0%, #ECECEC 100%);
+                top: $verticalPadding;
+                bottom: $verticalPadding;
+                right: 0;
+                width: 135px;
+                pointer-events: none;
+            }
+        }
+    }
+
+    // .last-matches__slider
+    &__slider {
+        padding-top: $verticalPadding;
+        padding-bottom: $verticalPadding;
+
+        .swiper {
+            overflow: visible !important;
+        }
+
+        .swiper-slide {
+            width: 403px;
+
+            @media screen and (max-width: $breakpoint576) {
+                width: min(323px, 100%);
+            }
+        }
+    }
+
+    .slider {
+
+        @media screen and (max-width: $shadowHideBreakpoint) and (min-width: $breakpoint992) {
+            padding-left: 55px;
+            padding-right: 55px;
+        }
+
+
+        // .slider__btn
+        &__btn {
+
+            position: absolute;
+            top: $verticalPadding;
+            bottom: $verticalPadding;
+            z-index: 3;
+
+            width: 45px;
+            border-radius: 10px;
+            background-color: $colorWhite;
+
+            @media screen and (max-width: $shadowHideBreakpoint) {
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+
+            @media screen and (max-width: $breakpoint992) {
+                display: none;
+            }
+    
+            // .slider__btn_prev
+            &_prev {
+                @media screen and (max-width: $sliderWidth) {
+                    border-radius: 0 10px 10px 0;
+                }
+                left: 0;
+            }
+    
+            // .slider__btn_next
+            &_next {
+                @media screen and (max-width: $sliderWidth) {
+                    border-radius: 10px 0 0 10px;
+                }
+                right: 0;
+            }
+        }
+    }
+}
+
+

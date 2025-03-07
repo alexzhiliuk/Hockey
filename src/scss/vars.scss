@@ -1,0 +1,43 @@
+// Container
+$conteinerWidth: 1650 + px;
+$containerPadding: 16 + px;
+
+// Breakpoints
+$breakpoint1440: 1439.98 + px;
+$breakpoint1400: 1399.98 + px;
+$breakpoint1200: 1199.98 + px;
+$breakpoint1024: 1023.98 + px;
+$breakpoint992: 991.98 + px;
+$breakpoint768: 767.98 + px;
+$breakpoint576: 575.98 + px;
+$breakpoint480: 479.98 + px;
+
+// Colors
+$colorWhite: #FFFFFF;
+$colorBlack: #000000;
+$colorDarkblue: #00223D;
+$colorPrimary: #0055E9;
+$colorSecondary: #F2F4F5;
+$colorBorder: #E6E9EC;
+$colorBorder2: #DDE2E6;
+$colorBreadcrumbs: #F3F3F3;
+$colorTableRow: #F9F9F9;
+$colorTableHeader: #1B1B1B;
+$colorBlack2: #1A1A1A;
+$colorGray: #757575;
+$colorRed: #DE2429;
+$colorGrayGradient: linear-gradient(123.45deg, #676C74 16.78%, #262D38 111.04%);
+
+
+// Fonts
+$fontPrimary: "Montserrat";
+
+// Layers
+$headerLayer: 9;
+$popupLayer: 10;
+
+// Burger
+$burgerBreakpoint: $breakpoint992;
+
+// Transitions
+$quickTransition: all 120ms ease-out;
