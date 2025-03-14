@@ -2222,6 +2222,13 @@ img {
   }
 }
 
+.matches-group__date {
+  display: block;
+  font-size: clamp(20px, 2.8vw, 28px);
+  margin-bottom: clamp(20px, 3vw, 30px);
+  font-weight: 800;
+}
+
 .matches {
   display: flex;
   flex-direction: column;
