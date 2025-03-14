@@ -4,6 +4,10 @@
     width: 100%;
     @include removeScrollbar;
 
+    @media screen and (max-width: $breakpoint576) {
+        @include width100vw;
+    }
+
     &_shadow {
         &_right {
             
@@ -43,6 +47,10 @@
         min-width: 100%;
         width: max-content;
         overflow: hidden;
+
+        @media screen and (max-width: $breakpoint576) {
+            border-radius: 0;
+        }
     }
 
     table {
@@ -51,9 +59,10 @@
 
         thead {
             th {
-                background-color: $colorTableRow;
+                background-color: $colorDarkblue;
+                color: $colorWhite;
                 padding: 15px 20px;
-                border: 1px solid $colorBorder;
+                border: 1px solid #001424;
                 border-top: none;
 
                 font-size: clamp(11px, 1.4vw, 14px);
@@ -143,5 +152,61 @@
     &__num {
         width: clamp(30px, 4.3vw, 43px);
         padding-left: 10px;
+    }
+}
+
+
+@media screen and (min-width: $breakpoint576) {
+    .tablesorter {
+        .tablesorter-header {
+            cursor: pointer;
+        }
+        .tablesorter-headerUnSorted {
+            .tablesorter-header-inner {
+                &:after {
+                    content: "";
+                    display: inline-block;
+                    margin-left: 10px;
+                    opacity: .2;
+                    width: 10px;
+                    aspect-ratio: 1;
+                    background: url(../img/icons/table-arrow.svg) center center / contain no-repeat;
+                }
+            }
+        }
+        .tablesorter-headerAsc {
+            .tablesorter-header-inner {
+                &:after {
+                    content: "";
+                    display: inline-block;
+                    margin-left: 10px;
+                    opacity: 1;
+                    width: 10px;
+                    aspect-ratio: 1;
+                    background: url(../img/icons/table-arrow.svg) center center / contain no-repeat;
+                }
+            }
+        }
+        .tablesorter-headerDesc {
+            .tablesorter-header-inner {
+                &:after {
+                    content: "";
+                    display: inline-block;
+                    margin-left: 10px;
+                    opacity: 1;
+                    rotate: 180deg;
+                    width: 10px;
+                    aspect-ratio: 1;
+                    background: url(../img/icons/table-arrow.svg) center center / contain no-repeat;
+                }
+            }
+        }
+        .sorter-false {
+            .tablesorter-header-inner {
+                &:after {
+                    display: none;
+                }
+            }
+        }
     }
 }

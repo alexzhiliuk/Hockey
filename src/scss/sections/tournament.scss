@@ -1,0 +1,269 @@
+$cardHeight: 170px;
+
+.tournament-grid {
+
+    $tournamentGridGap: 30px;
+
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+    &_1_8 {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    padding-top: 36px;
+
+    position: relative;
+
+    overflow-x: auto;
+    width: 100%;
+    padding-bottom: 20px;
+    margin-bottom: -20px;
+    @include scollbar;
+
+    @media screen and (max-width: $breakpoint768) {
+        grid-template-columns: 1fr;
+        padding-top: 0;
+    }
+
+    // .tournament-grid__stage
+    &__stage {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: $tournamentGridGap;
+
+        position: relative;
+
+        @media screen and (max-width: $breakpoint768) {
+            display: none;
+
+            &_active {
+                display: flex;
+            }
+        }
+
+        &_semifinal {
+            @media screen and (min-width: $breakpoint768) {
+                .tournament-card {
+                    margin-right: calc(2 * $tournamentGridGap);
+                    
+                    position: relative;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        right: -#{$tournamentGridGap};
+                        top: 50%;
+                        translate: 100% -50%;
+                        height: 2px;
+                        width: $tournamentGridGap;
+                        background-color: #CCCCCC;
+                    }
+                }
+    
+                position: relative;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    translate: 0 -50%;
+                    width: 2px;
+                    background-color: #CCCCCC;
+                    height: var(--line-height, calc(2 * ($cardHeight + $tournamentGridGap)));
+                }
+            }
+        }
+
+        &_final {
+            @media screen and (min-width: $breakpoint768)  {
+                .tournament-card {
+                    margin-left: $tournamentGridGap;
+                    
+                    position: relative;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: -#{$tournamentGridGap};
+                        top: 50%;
+                        translate: -100% -50%;
+                        height: 2px;
+                        width: $tournamentGridGap;
+                        background-color: #CCCCCC;
+                    }
+    
+                    &_3nd {
+                        margin-left: 0;
+                        translate: none;
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        
+                        &::after {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        
+        @media screen and (max-width: $breakpoint768) {
+            gap: 10px;
+        }
+    }
+}
+
+.tournament-card {
+
+    border-radius: 10px;
+    background-color: $colorTableRow;
+    padding: clamp(15px, 2.5vw, 25px);
+    height: $cardHeight;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    min-width: fit-content;
+
+    position: relative;
+
+    @media screen and (max-width: $breakpoint768) {
+        width: 100%;
+        justify-content: space-between;
+        gap: 0;
+        height: unset;
+    }
+
+    // .tournament-card__title
+    &__title {
+        font-size: 16px;
+        font-weight: 500;
+        color: $colorGray;
+        position: absolute;
+        left: 0;
+        top: -1.25em;
+        translate: 0 -100%;
+
+        @media screen and (max-width: $breakpoint768) {
+            display: none;
+        }
+    }
+    
+    // .tournament-card__teams
+    &__teams {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(10px, 2vw, 20px);
+
+        @media screen and (max-width: $breakpoint768) {
+            flex: 1 1;
+        }
+    }
+
+    // .tournament-card__team
+    &__team {
+        font-size: clamp(10px, 3vw, 20px);
+        line-height: 1.1;
+        font-weight: 700;
+        
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        width: 300px;
+
+        img {
+            width: clamp(30px, 5vw, 50px);
+            aspect-ratio: 1;
+            object-fit: contain;
+        }
+
+        @media screen and (max-width: $breakpoint768) {
+            width: unset;
+            font-weight: 500;
+
+            &_winner {
+                font-weight: 700;
+                color: $colorPrimary;
+            }
+        }
+    }
+
+    // .tournament-card__scores
+    &__scores {
+        font-size: clamp(20px, 2.4vw, 24px);
+        font-weight: 700;
+        
+        display: flex;
+
+        @media screen and (max-width: $breakpoint768) {
+            gap: 10px;
+        }
+    }
+
+    // .tournament-card__score
+    &__score {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+        width: clamp(40px, 5vw, 50px);
+
+        &-value {
+            &:first-of-type {
+                order: 0
+            }
+            &:last-of-type {
+                order: 1
+            }
+            &_none {
+                color: #CCCCCC;
+            }
+        }
+
+        &::before {
+            content: '';
+            width: 1px;
+            height: 16px;
+            background-color: #CCCCCC;
+            display: block;
+            order: 1;
+
+            @media screen and (max-width: $breakpoint768) {
+                width: 80%;
+                height: 1px;
+            }
+        }
+    }
+
+    &_unknown {
+        .tournament-card__team {
+            width: unset;
+            &::after {
+                content: '';
+                display: block;
+                height: 15px;
+                border-radius: 15px;
+                background-color: $colorWhite;
+                width: 204px;
+
+                @media screen and (max-width: $breakpoint768) {
+                    width: unset;
+                    flex: 0 1 150px;
+                }
+            }
+        }
+
+        .tournament-card__score-value {
+            color: #CCCCCC;
+        }
+    }
+}
+
+.tournament-tabs {
+
+    @media screen and (min-width: $breakpoint768) {
+        display: none;
+    }
+}

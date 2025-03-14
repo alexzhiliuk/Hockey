@@ -78,6 +78,23 @@ img {
     overflow-x: clip;
 }
 
+@mixin scollbar {
+    &::-webkit-scrollbar {
+        background: #ECECEC;
+        width: 10px;
+        height: 10px;
+        padding: 0;
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $colorPrimary;
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        background-clip: content-box;
+    }
+}
+
 @keyframes slideUp {
     0% {
         transform: translateY(100%);
@@ -85,6 +102,20 @@ img {
     }
     60% {
         transform: translateY(-5%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(5%);
         opacity: 1;
     }
     100% {

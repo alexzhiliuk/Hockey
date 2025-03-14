@@ -8,13 +8,21 @@
 @import "./UI/socials";
 @import "./UI/match-preview";
 @import "./UI/input";
+@import "./UI/btn";
 @import "./UI/tabs";
 @import "./UI/table";
+@import "./UI/player";
 
 @import "./sections/header";
 @import "./sections/breadcrumbs";
 @import "./sections/last-matches";
 @import "./sections/section";
+@import "./sections/news-list";
+@import "./sections/tournament";
+@import "./sections/players";
+@import "./sections/matches";
+@import "./sections/documents";
+@import "./sections/footer";
 
 
 @import "../libs/swiper/swiper";

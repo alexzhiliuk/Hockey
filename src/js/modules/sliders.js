@@ -19,3 +19,34 @@ const swiperLastMatches = new Swiper('#lastMatchesSlider', {
     },
 
 });
+
+
+const swiperNewsList = new Swiper('#newsListSlider', {    
+    slidesPerView: 1,
+    spaceBetween: 10,
+    centeredSlides: true,
+    
+    breakpoints: {
+        1200: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            centeredSlides: false
+        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+            centeredSlides: false,
+        },
+        576: {
+            slidesPerView: 2,
+            centeredSlides: false
+        }
+    },
+
+    pagination: {
+        el: "#newsListPagination",
+        clickable: true,
+    }
+
+
+});

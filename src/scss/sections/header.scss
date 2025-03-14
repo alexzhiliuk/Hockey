@@ -31,14 +31,16 @@ $headerHeight: clamp(68px, 9vw, 90px);
             .header__nav {
                 order: 3;
                 flex: 0 0 100%;
-                margin-bottom: 40px;
+                margin-top: auto;
+                margin-bottom: auto;
                 display: block;
             }
 
             .header__menu {
                 flex-direction: column;
-                gap: clamp(30px, 6vw, 60px);
-                font-size: clamp(16px, 2.4vw, 24px);
+                gap: clamp(40px, 6vw, 60px);
+                font-size: 24px;
+                font-weight: 800;
                 
                 li {
                     &::after {
@@ -52,7 +54,14 @@ $headerHeight: clamp(68px, 9vw, 90px);
                 order: 4;
                 flex: 0 0 100%;
                 margin-top: auto;
-                margin-bottom: 20px;
+                margin-bottom: auto;
+            }
+
+            .header__copy {
+                display: block;
+                order: 5;
+                margin-top: auto;
+                margin-bottom: 40px;
             }
         }
     }
@@ -113,6 +122,15 @@ $headerHeight: clamp(68px, 9vw, 90px);
         @media screen and (max-width: $burgerBreakpoint) {
             display: none;
         }
+    }
+
+    // .header__copy
+    &__copy {
+        display: none;
+
+        font-size: 14px;
+        color: $colorGray;
+        text-align: center;
     }
 
     // .header__burger

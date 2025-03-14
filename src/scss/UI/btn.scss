@@ -1,0 +1,29 @@
+.btn {
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    color: $colorPrimary;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: clamp(15px, 2vw, 20px) clamp(20px, 4vw, 40px);
+    border-radius: 10px;
+    background-color: transparent;
+    border: 2px solid $colorPrimary;
+
+    max-width: max-content;
+
+    &_center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media screen and (max-width: $breakpoint992) {
+        color: $colorWhite; 
+        background-color: $colorPrimary;
+        border-color: transparent;
+    }
+    
+}

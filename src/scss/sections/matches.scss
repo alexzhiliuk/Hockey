@@ -1,0 +1,141 @@
+.matches {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: $breakpoint768) {
+        gap: 10px;
+    }
+}
+
+.match-card {
+
+    display: flex;
+    align-items: center;
+    gap: clamp(15px, 4vw, 60px);
+
+    border-radius: 10px;
+    padding: 10px clamp(10px, 2vw, 30px);
+
+    &:nth-child(odd) {
+        background-color: $colorTableRow;
+    }
+
+    @media screen and (max-width: $breakpoint768) {
+        flex-wrap: wrap;
+        padding: 20px;
+        background-color: $colorTableRow;
+    }
+
+    // .match-card__datetime
+    &__datetime {
+        @include clamp(font-size, 12, 16);
+        font-weight: 700;
+
+        display: flex;
+        align-items: center;
+        gap: clamp(20px, 3vw, 30px);
+
+        @media screen and (max-width: $breakpoint1200) and (min-width: $breakpoint768) {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            gap: 5px;
+        }
+    }
+
+    // .match-card__date
+    &__date {
+        
+    }
+
+    // .match-card__time
+
+    &__time {
+    }
+
+    // .match-card__stadium
+    &__stadium {
+        @include clamp(font-size, 12, 16);
+        line-height: 1.2;
+
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        span {
+            @media screen and (min-width: $breakpoint768) {
+                font-size: 14px;
+                line-height: 1;
+                color: $colorGray
+            }
+        }
+
+        @media screen and (max-width: $breakpoint768) {
+            order: 3;
+            flex: 0 0 100%;
+            text-align: center;
+            display: block;
+        }
+    }
+
+    // .match-card__result
+    &__result {
+        margin-left: auto;
+        margin-right: auto;
+
+        display: flex;
+        align-items: center;
+        gap: clamp(10px, 3vw, 30px);
+
+        @media screen and (max-width: $breakpoint768) {
+            flex: 0 0 100%;
+            justify-content: center;
+        }
+    }
+
+    // .match-card__team
+    &__team {
+        @include clamp(font-size, 13, 18);
+        line-height: 1.2;
+        font-weight: 700;
+
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        &:first-of-type {
+            flex-direction: row-reverse;
+        }
+
+        &:hover {
+            color: $colorPrimary;
+        }
+
+        img {
+            width: 70px;
+            height: auto;
+            aspect-ratio: 1;
+            object-fit: contain;
+        }
+
+        @media screen and (max-width: $breakpoint992) {
+            flex-direction: column;
+            gap: 5px;
+            text-align: center;
+
+            &:first-of-type {
+                flex-direction: column;
+            }
+        }
+    }
+
+    // .match-card__score
+    &__score {
+        font-size: 24px;
+        font-weight: 800;
+        color: $colorPrimary;
+
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+}

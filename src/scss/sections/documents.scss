@@ -1,0 +1,73 @@
+.documents-section {
+    background-color: #ECECEC;
+    padding-top: clamp(40px, 6vw, 60px);
+    padding-bottom: clamp(40px, 6vw, 60px);
+
+    @media screen and (max-width: $breakpoint768) {
+        .documents-wrapper {
+            grid-template-rows: 0fr;
+            padding-top: 0;
+        }
+        &_open {
+            .documents-title {
+                &::after {
+                    rotate: 180deg;
+                }
+            }
+            .documents-wrapper {
+                grid-template-rows: 1fr;
+                padding-top: 40px;
+            }
+        }
+    }
+}
+
+.documents-wrapper {
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 1fr;
+    padding-top: 40px;
+}
+
+.documents-title {
+    @media screen and (max-width: $breakpoint768) {
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            translate: 0 -50%;
+            display: block;
+            width: 24px;
+            aspect-ratio: 1;
+            background: url(../img/icons/Arrow-Down-Accordeon.svg) center center / contain no-repeat;
+        }
+    }
+}
+
+.documents {
+
+    overflow: hidden;
+
+    display: flex;
+    gap: clamp(20px, 4vw, 50px);
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    // .documents__list
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        a {
+            &:hover {
+                color: $colorPrimary;
+            }
+        }
+    }
+}

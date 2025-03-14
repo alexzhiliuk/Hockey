@@ -1,19 +1,19 @@
+$choiceHeight: 42px;
 .select {
-    appearance: none;
-    -webkit-appearance: none;
     font-size: clamp(14px, 1.5vw, 15px);
     font-weight: 600;
 
-    padding: 16px 20px;
+    padding: 14px 20px;
     border-radius: 10px;
     border: 1px solid $colorBorder;
+
+    min-width: min(320px, 100%);
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
     
-    width: 100%;
     cursor: pointer;
-
-}
-
-.select-wrapper {
     position: relative;
     &::after {
         content: '';
@@ -27,6 +27,123 @@
         width: clamp(20px, 2.4vw, 24px);
         aspect-ratio: 1;
         background: url(../img/icons/Select-Arrow-Down.svg) center center / contain no-repeat;
-
     }
+
+    // opened
+    &_open {
+        .select__choices {
+            display: flex;
+        }
+    }
+
+    // .select__choices
+    &__choices {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        right: 0;
+
+        border-radius: 10px;
+        border: 1px solid $colorBorder;
+        padding: 5px;
+
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background-color: $colorWhite;
+
+
+        max-height: calc(($choiceHeight + 5px) * 6 + 5px);
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            background: $colorTableRow;
+            width: 5px;
+            padding: 0;
+            border-radius: 5px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: #B2B2B2;
+            width: 5px;
+            border-radius: 5px;
+            background-clip: content-box;
+        }
+    }
+
+    // .select__choice
+    &__choice {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        text-align: center;
+        height: $choiceHeight;
+        flex-shrink: 0;
+
+        border-radius: 6px;
+        background-color: $colorTableRow;
+
+        cursor: pointer;
+        &:hover {
+            background-color: rgba($color: $colorPrimary, $alpha: .2);
+        }
+    }
+
+    &__next,
+    &__prev {
+        display: none;
+    }
+
+    // month
+    &_month {
+        
+        &::before {
+            content: '';
+            display: block;
+            width: clamp(20px, 2.4vw, 24px);
+            aspect-ratio: 1;
+            background: url(../img/icons/Calendar.svg) center center / contain no-repeat;
+        }
+
+        @media screen and (max-width: $breakpoint576) {
+            width: 100%;
+            justify-content: center;
+
+            &::after {
+                display: none;
+            }
+
+            .select__prev {
+                display: block;
+                position: absolute;
+
+                left: 15px;
+                top: 50%;
+                translate: 0 -50%;
+
+                width: 20px;
+                aspect-ratio: 1;
+                background: url(../img/icons/Select-Arrow-Down.svg) center center / contain no-repeat;
+                rotate: 90deg;
+            }
+
+            .select__next {
+                display: block;
+                position: absolute;
+
+                right: 15px;
+                top: 50%;
+                translate: 0 -50%;
+
+                width: 20px;
+                aspect-ratio: 1;
+                background: url(../img/icons/Select-Arrow-Down.svg) center center / contain no-repeat;
+                rotate: -90deg;
+            }
+        }
+    
+    }
+
+
+
 }

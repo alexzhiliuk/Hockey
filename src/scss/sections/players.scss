@@ -1,0 +1,69 @@
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(10px, 2vw, 30px);
+
+    @media screen and (max-width: $breakpoint1200) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width: $breakpoint576) {
+        grid-template-columns: 1fr;
+    }
+
+    @media screen and (min-width: $breakpoint576) {
+        .player-card:first-child {
+            grid-column: span 2;
+            grid-row: span 2;
+    
+            padding: 40px;
+            padding-top: 30px;
+    
+            .player-card {
+    
+                // .player-card__team
+                &__team {
+                    top: 30px;
+                    left: 30px;
+        
+                    width: 150px;
+                }
+        
+                // .player-card__avatar
+                &__avatar {
+                    margin-bottom: 45px;
+        
+                    width: clamp(200px, 20vw, 310px);
+        
+                }
+    
+                // .player-card__name
+                &__name {
+                    font-size: 32px;
+                }
+    
+                // .player-card__position
+                &__position {
+                    font-size: 16px;
+                    margin-top: 10px;
+                    margin-bottom: 45px;
+                }
+    
+                // .player-card__stats
+                &__stats {
+                    .stats {
+    
+                        // .stats__name
+                        &__name {
+                            font-size: 14px;
+                        }
+                    
+                        // .stats__value
+                        &__value {
+                            font-size: 26px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

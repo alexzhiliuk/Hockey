@@ -11,22 +11,24 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20250307131517" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20250313221508" rel="stylesheet">
     
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.min.css?_v=20250307131517">
+    <link rel="stylesheet" href="css/style.min.css?_v=20250313221508">
 
     <link
       rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20250307131517"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20250313221508"
     />
 
     <!-- JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20250307131517"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20250307131517"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20250313221508"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20250313221508"></script>
 
     <title>Главная</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js?_v=20250313221508"></script>
 </head>
     <body>
 
@@ -105,6 +107,9 @@
                 </svg>                    
             </a>
         </div>
+        <small class="header__copy">
+            © Чемпионат города минска по хоккею с шайбой среди любительских команд 2024. Все права защищены 
+        </small>
         <div class="header__burger burger">
             <span></span>
         </div>
@@ -347,20 +352,24 @@
 
         <main>            
             <section class="section container">
-    <div class="section__tabs">
-        <h2 class="section__title section__title_active title">Турнирная таблица</h2>
-        <a href="" class="section__title title">Плей-офф</a>
-    </div>
+    
+    <h2 class="section__title title">Чемпионат города Минска</h2>
     <div class="section__body">
-        <div class="select-tabs">
-            <button class="select-tabs__item select-tabs__item_active">Высшая лига</button>
-            <button class="select-tabs__item">Первая лига</button>
-            <button class="select-tabs__item">Вторая лига</button>
-            <button class="select-tabs__item">Челлендж лига</button>
+        <div class="tabs-group">
+            <div class="tabs">
+                <button class="tabs__item tabs__item_active" data-tab-id="1-1">Турнирная таблица</button>
+                <button class="tabs__item" data-tab-id="1-2">Плей-офф</button>
+            </div>
+            <div class="tabs tabs_changeable">
+                <button class="tabs__item tabs__item_active" data-tab-id="2-1">Высшая лига</button>
+                <button class="tabs__item" data-tab-id="2-2">Первая лига</button>
+                <button class="tabs__item" data-tab-id="2-3">Вторая лига</button>
+                <button class="tabs__item" data-tab-id="2-4">Челлендж лига</button>
+            </div>
         </div>
-        <div class="table">
+        <div class="table" data-tab-content="1-1 2-1">
             <div class="table__wrapper">
-                <table>
+                <table class="sortedTable">
                     <thead>
                         <tr>
                             <th class="table__num"></th>
@@ -394,10 +403,49 @@
                             <td align="center">91</td>
                         </tr>
                         <tr>
-                            <td>1</td>
+                            <td>2</td>
                             <td class="table__with-avatar table__with-avatar_mobile-remove">
                                 <a href="">
                                     <img src="img/teams/02.png" alt="">
+                                    Столица
+                                </a>
+                            </td>
+                            <td align="center">21</td>
+                            <td align="center">12</td>
+                            <td align="center">2</td>
+                            <td align="center">0</td>
+                            <td align="center">0</td>
+                            <td align="center">168:80</td>
+                            <td align="center">61</td>
+                            <td align="center">91</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="table" data-tab-content="1-1 2-2">
+            <div class="table__wrapper">
+                <table class="sortedTable">
+                    <thead>
+                        <tr>
+                            <th class="table__num"></th>
+                            <th align="left">Команда</th>
+                            <th>И</th>
+                            <th>В</th>
+                            <th>ВБ</th>
+                            <th>ПБ</th>
+                            <th>П</th>
+                            <th>Ш</th>
+                            <th>О</th>
+                            <th>%</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td class="table__with-avatar table__with-avatar_mobile-remove">
+                                <a href="">
+                                    <img src="img/teams/04.png" alt="">
                                     Столица
                                 </a>
                             </td>
@@ -410,60 +458,800 @@
                             <td align="center">61</td>
                             <td align="center">91</td>
                         </tr>
+                        <tr>
+                            <td>2</td>
+                            <td class="table__with-avatar table__with-avatar_mobile-remove">
+                                <a href="">
+                                    <img src="img/teams/02.png" alt="">
+                                    Столица
+                                </a>
+                            </td>
+                            <td align="center">21</td>
+                            <td align="center">12</td>
+                            <td align="center">2</td>
+                            <td align="center">0</td>
+                            <td align="center">0</td>
+                            <td align="center">168:80</td>
+                            <td align="center">61</td>
+                            <td align="center">91</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
         </div>
+        <div class="tournament-tabs tabs tabs_changeable" data-tab-content="1-2 2-1">
+            <button class="tabs__item tabs__item_active" data-stage="quarterfinal">Четвертьфинал</button>
+            <button class="tabs__item" data-stage="semifinal">Полуфинал</button>
+            <button class="tabs__item" data-stage="final">Финал</button>
+        </div>
+        <div class="tournament-grid" data-tab-content="1-2 2-1">
+            <div class="tournament-grid__stage tournament-grid__stage_active" data-stage="quarterfinal">
+                <div class="tournament-card">
+                    <h3 class="tournament-card__title">Четвертьфинал</h3>
+                    <div class="tournament-card__teams">
+                        <div class="tournament-card__team tournament-card__team_winner">
+                            <img src="img/teams/04.png" width="50" alt="">
+                            Столица
+                        </div>
+                        <div class="tournament-card__team">
+                            <img src="img/teams/04.png" width="50" alt="">
+                            Характер
+                        </div>
+                    </div>
+                    <div class="tournament-card__scores">
+                        <div class="tournament-card__score">
+                            <span class="tournament-card__score-value">12</span>
+                            <span class="tournament-card__score-value">4</span>
+                        </div>
+                        <div class="tournament-card__score">
+                            <span class="tournament-card__score-value">2</span>
+                            <span class="tournament-card__score-value">2</span>
+                        </div>
+                        <div class="tournament-card__score">
+                            <span class="tournament-card__score-value">1</span>
+                            <span class="tournament-card__score-value">1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tournament-card">
+                    <div class="tournament-card__teams">
+                        <div class="tournament-card__team">
+                            <img src="img/teams/04.png" width="50" alt="">
+                            Столица
+                        </div>
+                        <div class="tournament-card__team">
+                            <img src="img/teams/04.png" width="50" alt="">
+                            Характер
+                        </div>
+                    </div>
+                    <div class="tournament-card__scores">
+                        <div class="tournament-card__score">
+                            <span class="tournament-card__score-value">12</span>
+                            <span class="tournament-card__score-value">4</span>
+                        </div>
+                        <div class="tournament-card__score">
+                            <span class="tournament-card__score-value">2</span>
+                            <span class="tournament-card__score-value">2</span>
+                        </div>
+                        <div class="tournament-card__score">
+                            <span class="tournament-card__score-value">1</span>
+                            <span class="tournament-card__score-value">1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tournament-card">
+                    <div class="tournament-card__teams">
+                        <div class="tournament-card__team">
+                            <img src="img/teams/04.png" width="50" alt="">
+                            Столица
+                        </div>
+                        <div class="tournament-card__team">
+                            <img src="img/teams/04.png" width="50" alt="">
+                            Характер
+                        </div>
+                    </div>
+                    <div class="tournament-card__scores">
+                        <div class="tournament-card__score">
+                            <span class="tournament-card__score-value">12</span>
+                            <span class="tournament-card__score-value">4</span>
+                        </div>
+                        <div class="tournament-card__score">
+                            <span class="tournament-card__score-value">2</span>
+                            <span class="tournament-card__score-value">2</span>
+                        </div>
+                        <div class="tournament-card__score">
+                            <span class="tournament-card__score-value">1</span>
+                            <span class="tournament-card__score-value">1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tournament-card">
+                    <div class="tournament-card__teams">
+                        <div class="tournament-card__team">
+                            <img src="img/teams/04.png" width="50" alt="">
+                            Столица
+                        </div>
+                        <div class="tournament-card__team">
+                            <img src="img/teams/04.png" width="50" alt="">
+                            Характер
+                        </div>
+                    </div>
+                    <div class="tournament-card__scores">
+                        <div class="tournament-card__score">
+                            <span class="tournament-card__score-value">12</span>
+                            <span class="tournament-card__score-value">4</span>
+                        </div>
+                        <div class="tournament-card__score">
+                            <span class="tournament-card__score-value">2</span>
+                            <span class="tournament-card__score-value">2</span>
+                        </div>
+                        <div class="tournament-card__score">
+                            <span class="tournament-card__score-value">1</span>
+                            <span class="tournament-card__score-value">1</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tournament-grid__stage tournament-grid__stage_semifinal" data-stage="semifinal">
+                <div class="tournament-card">
+                    <h3 class="tournament-card__title">Полуфинал</h3>
+                    <div class="tournament-card__teams">
+                        <div class="tournament-card__team">
+                            <img src="img/teams/04.png" width="50" alt="">
+                            Столица
+                        </div>
+                        <div class="tournament-card__team">
+                            <img src="img/teams/04.png" width="50" alt="">
+                            Характер
+                        </div>
+                    </div>
+                    <div class="tournament-card__scores">
+                        <div class="tournament-card__score">
+                            <span class="tournament-card__score-value">12</span>
+                            <span class="tournament-card__score-value">4</span>
+                        </div>
+                        <div class="tournament-card__score">
+                            <span class="tournament-card__score-value">2</span>
+                            <span class="tournament-card__score-value">2</span>
+                        </div>
+                        <div class="tournament-card__score">
+                            <span class="tournament-card__score-value">1</span>
+                            <span class="tournament-card__score-value">1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tournament-card">
+                    <h3 class="tournament-card__title">Полуфинал</h3>
+                    <div class="tournament-card__teams">
+                        <div class="tournament-card__team">
+                            <img src="img/teams/04.png" width="50" alt="">
+                            Столица
+                        </div>
+                        <div class="tournament-card__team">
+                            <img src="img/teams/04.png" width="50" alt="">
+                            Характер
+                        </div>
+                    </div>
+                    <div class="tournament-card__scores">
+                        <div class="tournament-card__score">
+                            <span class="tournament-card__score-value">12</span>
+                            <span class="tournament-card__score-value">4</span>
+                        </div>
+                        <div class="tournament-card__score">
+                            <span class="tournament-card__score-value">2</span>
+                            <span class="tournament-card__score-value">2</span>
+                        </div>
+                        <div class="tournament-card__score">
+                            <span class="tournament-card__score-value">1</span>
+                            <span class="tournament-card__score-value">1</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tournament-grid__stage tournament-grid__stage_final" data-stage="final">
+                <div class="tournament-card tournament-card_unknown">
+                    <h3 class="tournament-card__title">Финал</h3>
+                    <div class="tournament-card__teams">
+                        <div class="tournament-card__team">
+                            <img src="img/teams/unknown.png" width="50" alt="">
+                        </div>
+                        <div class="tournament-card__team">
+                            <img src="img/teams/unknown.png" width="50" alt="">
+                        </div>
+                    </div>
+                    <div class="tournament-card__scores">
+                        <div class="tournament-card__score">
+                            <span class="tournament-card__score-value">–</span>
+                            <span class="tournament-card__score-value">–</span>
+                        </div>
+                        <div class="tournament-card__score">
+                            <span class="tournament-card__score-value">–</span>
+                            <span class="tournament-card__score-value">–</span>
+                        </div>
+                        <div class="tournament-card__score">
+                            <span class="tournament-card__score-value">–</span>
+                            <span class="tournament-card__score-value">–</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tournament-card tournament-card_unknown tournament-card_3nd">
+                    <h3 class="tournament-card__title">Матч за 3-е место</h3>
+                    <div class="tournament-card__teams">
+                        <div class="tournament-card__team">
+                            <img src="img/teams/unknown.png" width="50" alt="">
+                        </div>
+                        <div class="tournament-card__team">
+                            <img src="img/teams/unknown.png" width="50" alt="">
+                        </div>
+                    </div>
+                    <div class="tournament-card__scores">
+                        <div class="tournament-card__score">
+                            <span class="tournament-card__score-value">–</span>
+                            <span class="tournament-card__score-value">–</span>
+                        </div>
+                        <div class="tournament-card__score">
+                            <span class="tournament-card__score-value">–</span>
+                            <span class="tournament-card__score-value">–</span>
+                        </div>
+                        <div class="tournament-card__score">
+                            <span class="tournament-card__score-value">–</span>
+                            <span class="tournament-card__score-value">–</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</section>
+            <section class="section container">
+    
+    <h2 class="section__title title">Новости</h2>    
+    
+    <div class="section__body">
+        <div class="news-list">
+            <div class="news-list__slider swiper" id="newsListSlider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <article class="news-card">
+                            <img src="img/teams/02.png" alt="" class="news-card__img" width="140">
+                            <time datetime="2023-10-01" class="news-card__date">01 октября 2024</time>
+                            <h3 class="news-card__title">Изменения в календаре Чемпионата</h3>
+                            <div class="news-card__content">
+                                <img src="img/teams/02.png" alt="" class="news-card__img" width="40">
+                                <div class="news-card__text">
+                                    <p>
+                                        Матч Первой лиги №15 "Бастион" - "Динамит" перенесен с 11 октября 2024 года на 21 февраля 2025 года. Место проведения матча - Олимпик-арена (малая площадка), время начала матча 19.10.
+                                    </p>
+                                    <p>
+                                        Матч Первой лиги №71 "Микст" - "Бастион" перенесен с 21 февраля 2025 года на 18 октября 2024. Место проведения матча - Олимпик-арена (малая площадка), время начала матча 19.10.
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article class="news-card">
+                            <img src="img/teams/02.png" alt="" class="news-card__img" width="140">
+                            <time datetime="2023-10-01" class="news-card__date">01 октября 2024</time>
+                            <h3 class="news-card__title">Изменения в календаре Чемпионата</h3>
+                            <div class="news-card__content">
+                                <img src="img/teams/02.png" alt="" class="news-card__img" width="40">
+                                <div class="news-card__text">
+                                    <p>
+                                        Матч Первой лиги №15 "Бастион" - "Динамит" перенесен с 11 октября 2024 года на 21 февраля 2025 года. Место проведения матча - Олимпик-арена (малая площадка), время начала матча 19.10.
+                                    </p>
+                                    <p>
+                                        Матч Первой лиги №71 "Микст" - "Бастион" перенесен с 21 февраля 2025 года на 18 октября 2024. Место проведения матча - Олимпик-арена (малая площадка), время начала матча 19.10.
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article class="news-card">
+                            <img src="img/teams/02.png" alt="" class="news-card__img" width="140">
+                            <time datetime="2023-10-01" class="news-card__date">01 октября 2024</time>
+                            <h3 class="news-card__title">Изменения в календаре Чемпионата</h3>
+                            <div class="news-card__content">
+                                <img src="img/teams/02.png" alt="" class="news-card__img" width="40">
+                                <div class="news-card__text">
+                                    <p>
+                                        Матч Первой лиги №15 "Бастион" - "Динамит" перенесен с 11 октября 2024 года на 21 февраля 2025 года. Место проведения матча - Олимпик-арена (малая площадка), время начала матча 19.10.
+                                    </p>
+                                    <p>
+                                        Матч Первой лиги №71 "Микст" - "Бастион" перенесен с 21 февраля 2025 года на 18 октября 2024. Место проведения матча - Олимпик-арена (малая площадка), время начала матча 19.10.
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article class="news-card">
+                            <img src="img/teams/02.png" alt="" class="news-card__img" width="140">
+                            <time datetime="2023-10-01" class="news-card__date">01 октября 2024</time>
+                            <h3 class="news-card__title">Изменения в календаре Чемпионата</h3>
+                            <div class="news-card__content">
+                                <img src="img/teams/02.png" alt="" class="news-card__img" width="40">
+                                <div class="news-card__text">
+                                    <p>
+                                        Матч Первой лиги №15 "Бастион" - "Динамит" перенесен с 11 октября 2024 года на 21 февраля 2025 года. Место проведения матча - Олимпик-арена (малая площадка), время начала матча 19.10.
+                                    </p>
+                                    <p>
+                                        Матч Первой лиги №71 "Микст" - "Бастион" перенесен с 21 февраля 2025 года на 18 октября 2024. Место проведения матча - Олимпик-арена (малая площадка), время начала матча 19.10.
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <div class="news-list__pagination" id="newsListPagination"></div>
+        </div>
+        <button class="btn btn_center">Все новости</button>
+    </div>
+</section>
+            <section class="section container">
+    
+    <h2 class="section__title title">Статистика</h2>    
+    
+    <div class="section__body">
+        <div class="tabs-group">
+            <div class="tabs">
+                <button class="tabs__item tabs__item_active">Регулярный чемпионат</button>
+                <button class="tabs__item">Плей-офф</button>
+            </div>
+            <div class="tabs tabs_changeable">
+                <button class="tabs__item tabs__item_active">Высшая лига</button>
+                <button class="tabs__item">Первая лига</button>
+                <button class="tabs__item">Вторая лига</button>
+                <button class="tabs__item">Челлендж лига</button>
+            </div>
+        </div>
+        <div class="tabs tabs_changed">
+            <button class="tabs__item tabs__item_active">Бомбардиры</button>
+            <button class="tabs__item">Снайперы</button>
+            <button class="tabs__item">Ассистенты</button>
+            <button class="tabs__item">Вратари</button>
+            <button class="tabs__item">Штрафники</button>
+        </div>
+        <div class="players-grid">
+            <a href="" class="player-card">
+                <img src="img/teams/atlant.png" alt="" class="player-card__team" width="70">
+                <div class="player-card__avatar">
+                    <img src="img/players/Avatar.png" alt="" width="100" height="100">
+                </div>
+                <h3 class="player-card__name">Деревяго Сергей</h3>
+                <h4 class="player-card__position">НАПАДАЮЩИЙ</h4>
+                <div class="player-card__stats">
+                    <div class="stats">
+                        <div class="stats__name">Очки</div>
+                        <div class="stats__value">5</div>
+                    </div>
+                    <div class="stats">
+                        <div class="stats__name">Шайбы</div>
+                        <div class="stats__value">0</div>
+                    </div>
+                    <div class="stats">
+                        <div class="stats__name">Передачи</div>
+                        <div class="stats__value">2</div>
+                    </div>
+                    <div class="stats">
+                        <div class="stats__name">Игры</div>
+                        <div class="stats__value">3</div>
+                    </div>
+                    <div class="stats">
+                        <div class="stats__name">Штраф</div>
+                        <div class="stats__value">10 мин</div>
+                    </div>
+                </div>
+            </a>
+            <a href="" class="player-card">
+                <img src="img/teams/atlant.png" alt="" class="player-card__team" width="70">
+                <div class="player-card__avatar">
+                    <img src="img/players/Avatar.png" alt="" width="100" height="100">
+                </div>
+                <h3 class="player-card__name">Деревяго Сергей</h3>
+                <h4 class="player-card__position">НАПАДАЮЩИЙ</h4>
+                <div class="player-card__stats">
+                    <div class="stats">
+                        <div class="stats__name">Очки</div>
+                        <div class="stats__value">5</div>
+                    </div>
+                    <div class="stats">
+                        <div class="stats__name">Шайбы</div>
+                        <div class="stats__value">0</div>
+                    </div>
+                    <div class="stats">
+                        <div class="stats__name">Передачи</div>
+                        <div class="stats__value">2</div>
+                    </div>
+                    <div class="stats">
+                        <div class="stats__name">Игры</div>
+                        <div class="stats__value">3</div>
+                    </div>
+                    <div class="stats">
+                        <div class="stats__name">Штраф</div>
+                        <div class="stats__value">10 мин</div>
+                    </div>
+                </div>
+            </a>
+            <a href="" class="player-card">
+                <img src="img/teams/atlant.png" alt="" class="player-card__team" width="70">
+                <div class="player-card__avatar">
+                    <img src="img/players/Avatar.png" alt="" width="100" height="100">
+                </div>
+                <h3 class="player-card__name">Деревяго Сергей</h3>
+                <h4 class="player-card__position">НАПАДАЮЩИЙ</h4>
+                <div class="player-card__stats">
+                    <div class="stats">
+                        <div class="stats__name">Очки</div>
+                        <div class="stats__value">5</div>
+                    </div>
+                    <div class="stats">
+                        <div class="stats__name">Шайбы</div>
+                        <div class="stats__value">0</div>
+                    </div>
+                    <div class="stats">
+                        <div class="stats__name">Передачи</div>
+                        <div class="stats__value">2</div>
+                    </div>
+                    <div class="stats">
+                        <div class="stats__name">Игры</div>
+                        <div class="stats__value">3</div>
+                    </div>
+                    <div class="stats">
+                        <div class="stats__name">Штраф</div>
+                        <div class="stats__value">10 мин</div>
+                    </div>
+                </div>
+            </a>
+            <a href="" class="player-card">
+                <img src="img/teams/atlant.png" alt="" class="player-card__team" width="70">
+                <div class="player-card__avatar">
+                    <img src="img/players/Avatar.png" alt="" width="100" height="100">
+                </div>
+                <h3 class="player-card__name">Деревяго Сергей</h3>
+                <h4 class="player-card__position">НАПАДАЮЩИЙ</h4>
+                <div class="player-card__stats">
+                    <div class="stats">
+                        <div class="stats__name">Очки</div>
+                        <div class="stats__value">5</div>
+                    </div>
+                    <div class="stats">
+                        <div class="stats__name">Шайбы</div>
+                        <div class="stats__value">0</div>
+                    </div>
+                    <div class="stats">
+                        <div class="stats__name">Передачи</div>
+                        <div class="stats__value">2</div>
+                    </div>
+                    <div class="stats">
+                        <div class="stats__name">Игры</div>
+                        <div class="stats__value">3</div>
+                    </div>
+                    <div class="stats">
+                        <div class="stats__name">Штраф</div>
+                        <div class="stats__value">10 мин</div>
+                    </div>
+                </div>
+            </a>
+            <a href="" class="player-card">
+                <img src="img/teams/atlant.png" alt="" class="player-card__team" width="70">
+                <div class="player-card__avatar">
+                    <img src="img/players/empty.svg" alt="" width="100" height="100">
+                </div>
+                <h3 class="player-card__name">Деревяго Сергей</h3>
+                <h4 class="player-card__position">НАПАДАЮЩИЙ</h4>
+                <div class="player-card__stats">
+                    <div class="stats">
+                        <div class="stats__name">Очки</div>
+                        <div class="stats__value">5</div>
+                    </div>
+                    <div class="stats">
+                        <div class="stats__name">Шайбы</div>
+                        <div class="stats__value">0</div>
+                    </div>
+                    <div class="stats">
+                        <div class="stats__name">Передачи</div>
+                        <div class="stats__value">2</div>
+                    </div>
+                    <div class="stats">
+                        <div class="stats__name">Игры</div>
+                        <div class="stats__value">3</div>
+                    </div>
+                    <div class="stats">
+                        <div class="stats__name">Штраф</div>
+                        <div class="stats__value">10 мин</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <a href="#" class="btn btn_center">Смотреть всех</a>
+    </div>
+</section>
+            <section class="section container">
+    
+    <h2 class="section__title title">Календарь</h2>    
+    
+    <div class="section__body">
+        <div class="tabs-group tabs-group_row">
+            <div class="tabs tabs_changeable">
+                <button class="tabs__item tabs__item_active">Высшая лига</button>
+                <button class="tabs__item">Первая лига</button>
+                <button class="tabs__item">Вторая лига</button>
+                <button class="tabs__item">Челлендж лига</button>
+            </div>
+            <div class="select select_month">
+                <div class="select__next"></div>
+                <div class="select__prev"></div>
+                <div class="select__chosen"></div>
+                <select name="" id="" hidden>
+                    <option value="1" selected>Январь</option>
+                    <option value="2">Февраль</option>
+                    <option value="3">Март</option>
+                    <option value="4">Апрель</option>
+                    <option value="5">Май</option>
+                    <option value="6">Июнь</option>
+                    <option value="7">Июль</option>
+                    <option value="8">Август</option>
+                    <option value="9">Сентябрь</option>
+                    <option value="10">Октябрь</option>
+                    <option value="11">Ноябрь</option>
+                    <option value="12">Декабрь</option>
+                </select>
+            </div>
+        </div>
+        <div class="matches">
+            <div class="match-card">
+                <time datetime="2024-05-02 20:55" class="match-card__datetime">
+                    <span class="match-card__date">2 мая 2024</span>
+                    <span class="match-card__time">20:55</span>
+                </time>
+                <div class="match-card__stadium">
+                    Олимпик-арена
+                    <span>(малая площадка)</span>
+                </div>
+                <div class="match-card__result">
+                    <a href="" class="match-card__team">
+                        <img src="img/teams/05.png" width="70" alt="">
+                        Регион-Минск
+                    </a>
+                    <a href="" class="match-card__score">
+                        <span>3</span>
+                        <span>:</span>
+                        <span>1</span>
+                    </a>
+                    <a href="" class="match-card__team">
+                        <img src="img/teams/06.png" width="70" alt="">
+                        Ночные Звезды
+                    </a>
+                </div>
+            </div>
+            <div class="match-card">
+                <time datetime="2024-05-02 20:55" class="match-card__datetime">
+                    <span class="match-card__date">2 мая 2024</span>
+                    <span class="match-card__time">20:55</span>
+                </time>
+                <div class="match-card__stadium">
+                    Олимпик-арена
+                    <span>(малая площадка)</span>
+                </div>
+                <div class="match-card__result">
+                    <a href="" class="match-card__team">
+                        <img src="img/teams/05.png" width="70" alt="">
+                        Регион-Минск
+                    </a>
+                    <a href="" class="match-card__score">
+                        <span>3</span>
+                        <span>:</span>
+                        <span>1</span>
+                    </a>
+                    <a href="" class="match-card__team">
+                        <img src="img/teams/06.png" width="70" alt="">
+                        Ночные Звезды
+                    </a>
+                </div>
+            </div>
+            <div class="match-card">
+                <time datetime="2024-05-02 20:55" class="match-card__datetime">
+                    <span class="match-card__date">2 мая 2024</span>
+                    <span class="match-card__time">20:55</span>
+                </time>
+                <div class="match-card__stadium">
+                    Олимпик-арена
+                    <span>(малая площадка)</span>
+                </div>
+                <div class="match-card__result">
+                    <a href="" class="match-card__team">
+                        <img src="img/teams/05.png" width="70" alt="">
+                        Регион-Минск
+                    </a>
+                    <a href="" class="match-card__score">
+                        <span>3</span>
+                        <span>:</span>
+                        <span>1</span>
+                    </a>
+                    <a href="" class="match-card__team">
+                        <img src="img/teams/06.png" width="70" alt="">
+                        Ночные Звезды
+                    </a>
+                </div>
+            </div>
+            <div class="match-card">
+                <time datetime="2024-05-02 20:55" class="match-card__datetime">
+                    <span class="match-card__date">2 мая 2024</span>
+                    <span class="match-card__time">20:55</span>
+                </time>
+                <div class="match-card__stadium">
+                    Олимпик-арена
+                    <span>(малая площадка)</span>
+                </div>
+                <div class="match-card__result">
+                    <a href="" class="match-card__team">
+                        <img src="img/teams/05.png" width="70" alt="">
+                        Регион-Минск
+                    </a>
+                    <a href="" class="match-card__score">
+                        <span>3</span>
+                        <span>:</span>
+                        <span>1</span>
+                    </a>
+                    <a href="" class="match-card__team">
+                        <img src="img/teams/06.png" width="70" alt="">
+                        Ночные Звезды
+                    </a>
+                </div>
+            </div>
+            <div class="match-card">
+                <time datetime="2024-05-02 20:55" class="match-card__datetime">
+                    <span class="match-card__date">2 мая 2024</span>
+                    <span class="match-card__time">20:55</span>
+                </time>
+                <div class="match-card__stadium">
+                    Олимпик-арена
+                    <span>(малая площадка)</span>
+                </div>
+                <div class="match-card__result">
+                    <a href="" class="match-card__team">
+                        <img src="img/teams/05.png" width="70" alt="">
+                        Регион-Минск
+                    </a>
+                    <a href="" class="match-card__score">
+                        <span>3</span>
+                        <span>:</span>
+                        <span>1</span>
+                    </a>
+                    <a href="" class="match-card__team">
+                        <img src="img/teams/06.png" width="70" alt="">
+                        Ночные Звезды
+                    </a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn btn_center">Показать еще</a>
+    </div>
+</section>
+            <section class="container documents-section">
+    
+    <h2 class="title documents-title">Документы</h2>    
+    
+    <div class="documents-wrapper">
+        <div class="documents">
+            <ul class="documents__list">
+                <li>
+                    <a href="">
+                        Положение Чемпионата 2024-2025
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        Дисциплинарный кодекс
+                    </a>
+                </li>
+            </ul>
+            <ul class="documents__list">
+                <li>
+                    <a href="">Календарь Высшей лиги</a>
+                </li>
+                <li>
+                    <a href="">Календарь Первой лиги</a>
+                </li>
+                <li>
+                    <a href="">Календарь Второй лиги</a>
+                </li>
+                <li>
+                    <a href="">Календарь Челлендж лиги</a>
+                </li>
+            </ul>
+            <ul class="documents__list">
+                <li>
+                    <a href="">Бланк дозаявки игрока</a>
+                </li>
+                <li>
+                    <a href="">Анкета игрока</a>
+                </li>
+            </ul>
+            <ul class="documents__list">
+                <li>
+                    <a href="">
+                        Заявка команды на сезон
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        Заявка команды на матч
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
 </section>
 
 <script>
-    function checkHorizontalScroll(element) {
-        const canScroll = element[0].scrollWidth > element[0].clientWidth;
-        const isAtStart = element.scrollLeft() === 0;
-        const isAtEnd = element.scrollLeft() + element[0].clientWidth >= element[0].scrollWidth - 1;
-
-        return {
-            canScroll: canScroll, // Можно ли скролить
-            isAtStart: isAtStart, // Доскролен ли до начала
-            isAtEnd: isAtEnd      // Доскролен ли до конца
-        };
-    }
-
-    function toggleClasses(element, scrollInfo) {
-        if (scrollInfo.canScroll) {
-            if (scrollInfo.isAtStart) {
-                element.addClass("table_shadow_right").removeClass("table_shadow_left")
-            } else if (scrollInfo.isAtEnd) {
-                element.addClass("table_shadow_left").removeClass("table_shadow_right")
-            } else {
-                element.addClass("table_shadow_left").addClass("table_shadow_right")
-            }
-
-            var scroll = element.scrollLeft()
-            element.css("--right-shadow", `-${scroll}px`)
-            element.css("--left-shadow", `${scroll}px`)
-        } else {
-            element.removeClass("table_shadow_left").removeClass("table_shadow_right")
-        }
-    }
-
-    var element = $('.table');
-    var scrollInfo = checkHorizontalScroll(element);
-
-    toggleClasses(element, scrollInfo);
-
-    element.on('scroll', function() {
-        var scrollInfo = checkHorizontalScroll(element);
-        toggleClasses(element, scrollInfo);
-    });
-    $(window).resize(function() {
-        var scrollInfo = checkHorizontalScroll(element);
-        toggleClasses(element, scrollInfo);
-    });
+    $(".documents-title").click(function() {
+        $(".documents-section").toggleClass("documents-section_open")
+    })
 </script>
         </main>
 
-        <script src="js/app.min.js?_v=20250307131517"></script>
+        <footer class="footer">
+    <div class="footer__container container">
+        <div class="footer__logo">
+            <img src="img/header/Logo.png" alt="">
+        </div>
+        <p class="footer__copy">
+            © Чемпионат города минска по хоккею с шайбой <br>
+            среди любительских команд 2024. Все права защищены 
+        </p>
+        <div class="footer__socials socials">
+            <a href="">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_2310_2547)">
+                    <path d="M12 0C18.6274 0 24 5.37259 24 12C24 18.1352 19.3955 23.1944 13.4538 23.9121V15.667L16.7001 15.667L17.3734 12H13.4538V10.7031C13.4538 9.73417 13.6439 9.06339 14.0799 8.63483C14.5159 8.20627 15.1979 8.01993 16.1817 8.01993C16.4307 8.01993 16.6599 8.02241 16.8633 8.02736C17.1591 8.03456 17.4002 8.047 17.568 8.06467V4.74048C17.501 4.72184 17.4218 4.70321 17.3331 4.68486C17.1321 4.6433 16.8822 4.60324 16.6136 4.56806C16.0523 4.49453 15.4093 4.4423 14.9594 4.4423C13.1424 4.4423 11.7692 4.83102 10.8107 5.63619C9.65388 6.60791 9.10108 8.18622 9.10108 10.4199V12H6.62659V15.667H9.10108V23.6466C3.87432 22.3498 0 17.6277 0 12C0 5.37259 5.37259 0 12 0Z" fill="white"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_2310_2547">
+                    <rect width="24" height="24" fill="white"/>
+                    </clipPath>
+                    </defs>
+                </svg>                    
+            </a>
+            <a href="">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.3952 7.02212C17.6005 7.02368 16.9543 6.3802 16.9528 5.58548C16.9512 4.79076 17.5947 4.14457 18.3898 4.14302C19.1848 4.14146 19.831 4.78531 19.8326 5.58004C19.8338 6.37476 19.1903 7.02057 18.3952 7.02212Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0115 18.161C8.60909 18.1676 5.8451 15.4149 5.8385 12.0117C5.83188 8.60923 8.58536 5.84481 11.9878 5.8382C15.3909 5.83159 18.1553 8.5859 18.1619 11.9879C18.1685 15.3912 15.4143 18.1544 12.0115 18.161ZM11.992 8.00035C9.78365 8.00424 7.99594 9.79858 7.99983 12.0074C8.0041 14.2166 9.79882 16.0039 12.0072 15.9996C14.2164 15.9954 16.0041 14.2014 15.9998 11.9922C15.9955 9.78302 14.2008 7.99608 11.992 8.00035Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.1192 0.646479C4.88126 0.347876 5.75333 0.143362 7.03015 0.0830982C8.31011 0.0216726 8.71872 0.00767102 11.9769 0.00145262C15.2358 -0.00476578 15.6444 0.00766862 16.9244 0.0644334C18.2016 0.119643 19.0741 0.321049 19.8377 0.616544C20.6277 0.920974 21.298 1.33078 21.966 1.99603C22.6339 2.66205 23.0453 3.33002 23.3536 4.1189C23.6518 4.88174 23.8563 5.75306 23.917 7.03068C23.9776 8.31023 23.9924 8.71847 23.9986 11.9771C24.0048 15.2353 23.9916 15.6443 23.9356 16.925C23.88 18.2014 23.679 19.0743 23.3835 19.8375C23.0783 20.6276 22.6693 21.2979 22.004 21.9659C21.3388 22.6342 20.6701 23.0452 19.8812 23.3539C19.1184 23.6517 18.2471 23.8562 16.9702 23.9173C15.6903 23.9779 15.2817 23.9923 12.0224 23.9985C8.76459 24.0048 8.35598 23.9923 7.07605 23.9359C5.79882 23.88 4.92597 23.6789 4.16275 23.3838C3.37271 23.0782 2.70242 22.6696 2.03446 22.004C1.36611 21.3383 0.954386 20.67 0.646458 19.8811C0.347858 19.1186 0.144107 18.2469 0.0830727 16.9705C0.0220359 15.6901 0.00765506 15.2811 0.00143906 12.0229C-0.00480094 8.76435 0.00803667 8.35611 0.0640167 7.07616C0.1204 5.79855 0.320637 4.92606 0.61613 4.16206C0.921328 3.37239 1.33035 2.70248 1.99637 2.03413C2.6616 1.36616 3.33033 0.954017 4.1192 0.646479ZM4.94154 21.3679C5.36494 21.5308 6.00023 21.7252 7.17014 21.7761C8.43607 21.8309 8.81514 21.843 12.0185 21.8368C15.223 21.8309 15.6021 21.8173 16.8676 21.7579C18.0363 21.7022 18.6716 21.5055 19.0939 21.3407C19.6541 21.1218 20.0531 20.8601 20.4722 20.4406C20.8913 20.0195 21.1506 19.6194 21.3676 19.0591C21.5309 18.6354 21.7249 17.9996 21.7758 16.8297C21.8314 15.5646 21.8431 15.1851 21.8368 11.9809C21.831 8.77757 21.8174 8.3981 21.7572 7.13254C21.7019 5.96339 21.5056 5.32808 21.3404 4.90623C21.1215 4.34519 20.8606 3.94705 20.4399 3.52753C20.0192 3.10801 19.6191 2.84945 19.0581 2.6325C18.6355 2.46881 17.9994 2.27518 16.8303 2.22426C15.5643 2.16865 15.1849 2.15737 11.9808 2.1636C8.77743 2.16982 8.39836 2.18264 7.13281 2.24253C5.9633 2.29812 5.32877 2.49447 4.90575 2.65972C4.34587 2.87861 3.94696 3.13872 3.52746 3.5598C3.10871 3.98087 2.84938 4.38018 2.63244 4.94161C2.46993 5.36464 2.27434 6.00072 2.2242 7.16987C2.16898 8.43581 2.15733 8.81529 2.16355 12.0187C2.16939 15.2228 2.18298 15.6023 2.24248 16.8671C2.29729 18.037 2.49518 18.6715 2.65966 19.0949C2.87855 19.6544 3.13944 20.0533 3.55973 20.4729C3.98081 20.8908 4.38088 21.1509 4.94154 21.3679Z" fill="white"/>
+                </svg>                    
+            </a>
+            <a href="">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_2310_2551)">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M22.7462 4.83553C23.1185 5.2103 23.3859 5.67629 23.5216 6.18687C24.0234 8.07142 24.0234 12.0014 24.0234 12.0014C24.0234 12.0014 24.0234 15.9314 23.5216 17.816C23.3859 18.3266 23.1185 18.7925 22.7462 19.1673C22.3738 19.5421 21.9095 19.8125 21.3998 19.9514C19.5234 20.456 12.0234 20.456 12.0234 20.456C12.0234 20.456 4.52344 20.456 2.64707 19.9514C2.13737 19.8125 1.6731 19.5421 1.30073 19.1673C0.928354 18.7925 0.660943 18.3266 0.525256 17.816C0.0234376 15.9314 0.0234375 12.0014 0.0234375 12.0014C0.0234375 12.0014 0.0234376 8.07142 0.525256 6.18687C0.660943 5.67629 0.928354 5.2103 1.30073 4.83553C1.6731 4.46077 2.13737 4.19038 2.64707 4.05142C4.52344 3.54688 12.0234 3.54688 12.0234 3.54688C12.0234 3.54688 19.5234 3.54688 21.3998 4.05142C21.9095 4.19038 22.3738 4.46077 22.7462 4.83553ZM15.8416 12.0015L9.56891 8.43282V15.5701L15.8416 12.0015Z" fill="white"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_2310_2551">
+                    <rect width="24" height="24" fill="white"/>
+                    </clipPath>
+                    </defs>
+                </svg>                    
+            </a>
+            <a href="">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_2310_2553)">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.68707 1.68707C0 3.37414 0 6.08942 0 11.52V12.48C0 17.9106 0 20.6259 1.68707 22.3129C3.37414 24 6.08942 24 11.52 24H12.48C17.9106 24 20.6259 24 22.3129 22.3129C24 20.6259 24 17.9106 24 12.48V11.52C24 6.08942 24 3.37414 22.3129 1.68707C20.6259 0 17.9106 0 12.48 0H11.52C6.08942 0 3.37414 0 1.68707 1.68707ZM4.05005 7.30005C4.18006 13.54 7.30003 17.29 12.77 17.29H13.0801V13.72C15.0901 13.92 16.61 15.39 17.22 17.29H20.0601C19.2801 14.45 17.23 12.88 15.95 12.28C17.23 11.54 19.03 9.74006 19.46 7.30005H16.8799C16.3199 9.28005 14.6601 11.08 13.0801 11.25V7.30005H10.5V14.22C8.90002 13.82 6.88006 11.88 6.79006 7.30005H4.05005Z" fill="white"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_2310_2553">
+                    <rect width="24" height="24" fill="white"/>
+                    </clipPath>
+                    </defs>
+                </svg>                    
+            </a>
+        </div>
+    </div>
+</footer>
+
+        <script src="js/app.min.js?_v=20250313221508"></script>
     </body>
 </html>
