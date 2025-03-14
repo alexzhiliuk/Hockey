@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/head.html',{
+        "title": "Новости"
+    })
+    <body>
+
+        @@include('html/header.html')
+        @@include('html/news/breadcrumbs.html')
+
+        <main>            
+            @@include('html/news/news.html')
+        </main>
+
+        @@include('html/footer.html')
+
+        <script src="js/app.min.js"></script>
+    </body>
+</html>

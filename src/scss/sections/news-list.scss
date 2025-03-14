@@ -1,5 +1,19 @@
 .news-list {
 
+    &__flex {
+        @include flexColumns(4, clamp(10px, 3vw, 30px));
+
+        @media screen and (max-width: $breakpoint1200) {
+            @include flexColumns(3, clamp(10px, 3vw, 30px))
+        }
+        @media screen and (max-width: $breakpoint768) {
+            @include flexColumns(2, clamp(10px, 3vw, 30px))
+        }
+        @media screen and (max-width: $breakpoint576) {
+            @include flexColumns(1, clamp(10px, 3vw, 30px))
+        }
+    }
+
     // .news-list__slider
     &__slider {
         @media screen and (max-width: $breakpoint576) {
