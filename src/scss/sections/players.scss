@@ -67,3 +67,58 @@
         }
     }
 }
+
+.players-flex {
+    @include flexColumns(4, clamp(10px, 2vw, 30px));
+    @media screen and (max-width: $breakpoint1200) {
+        @include flexColumns(2, clamp(10px, 2vw, 30px));
+    }
+    @media screen and (max-width: $breakpoint576) {
+        @include flexColumns(1, clamp(10px, 2vw, 30px));
+    }
+}
+
+.players-table {
+
+    // .players-table__header
+    &__header {
+        height: 40px;
+        display: flex;
+        justify-content: flex-end;
+
+        & > div {
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: $colorGray;
+            font-size: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:nth-child(n + 3) {
+                flex: 0 0 14%;
+            }
+        }
+
+        @media screen and (max-width: $breakpoint992) {
+            display: none;
+        }
+    }
+
+    // .players-table__body
+    &__body {
+        @media screen and (min-width: $breakpoint992) {
+            border-radius: 10px;
+            border: 1px solid $colorBorder;
+            overflow: hidden;
+        }
+        @media screen and (max-width: $breakpoint992) {
+            @include flexColumns(2, clamp(10px, 2vw, 30px));
+        }
+        @media screen and (max-width: $breakpoint576) {
+            @include flexColumns(1, clamp(10px, 2vw, 30px));
+        }
+    }
+}

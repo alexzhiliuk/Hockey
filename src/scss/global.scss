@@ -48,6 +48,7 @@ main {
     flex-direction: column;
     gap: $mainGap;
     padding-top: $mainGap;
+    padding-bottom: $mainGap;
 }
 
 ul, ol {

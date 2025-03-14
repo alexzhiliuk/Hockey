@@ -1,3 +1,26 @@
+@mixin playerCardStats {
+    margin-top: auto;
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 5px;
+    width: 100%;
+
+    .stats {
+
+        // .stats__name
+        &__name {
+            font-size: 8px;
+        }
+    
+        // .stats__value
+        &__value {
+            font-size: 16px;
+        }
+    }
+}
+
 .player-card {
 
     display: flex;
@@ -91,28 +114,153 @@
 
     // .player-card__stats
     &__stats {
-        margin-top: auto;
+        @include playerCardStats;
+    }
+}
+
+.player-row {
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (min-width: $breakpoint992) {
+        &:nth-child(odd) {
+            background-color: $colorTableRow;
+        }
+    
+        & > * {
+            padding: 10px 20px;
+            border-right: 1px solid $colorBorder;
+    
+            &:last-child {
+                border-right: none;
+            }
+        }
+    }
+    @media screen and (max-width: $breakpoint992) {
+        background-color: $colorTableRow;
+        flex-wrap: wrap;
+        padding: 25px;
+        border-radius: 10px;
+    }
+
+    // .player-row__team
+    &__team {
+        padding: 18px 16px;
 
         display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 5px;
-        width: 100%;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 40px;
+            aspect-ratio: 1;
+            object-fit: contain;
+            display: block;
+        }
+
+        @media screen and (max-width: $breakpoint992) {
+            order: 2;
+            padding: 0;
+            align-items: flex-start;
+            img {
+                width: 60px;
+            }
+        }
+    }
+
+    // .player-row__player
+    &__player {
+        display: flex;
+        align-items: center;
+        gap: clamp(15px, 2vw, 20px);
+
+        flex: 1 1;
+
+        @media screen and (max-width: $breakpoint992) {
+            order: 1;
+            margin-bottom: 20px;
+        }
+    }
+
+    // .player-row__avatar
+    &__avatar {
+        img {
+            width: 60px;
+            aspect-ratio: 1;
+            object-fit: cover;
+            overflow: hidden;
+            display: block;
+        }
+    }
+
+    // .player-row__name
+    &__name {
+        font-size: 16px;
+        font-weight: 600;
+
+        @media screen and (max-width: $breakpoint992) {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+    }
+
+    // .player-row__position
+    &__position {
+        @media screen and (min-width: $breakpoint992) {
+            display: none;
+        }
+        font-size: 8px;
+        line-height: 1.2;
+        font-weight: 400;
+        color: $colorGray;
+    }
+
+    // .player-row__stats
+    &__stats {
+
+        flex: 0 0 70%;
+        display: flex;
+        padding: 0;
+
+        @media screen and (max-width: $breakpoint992) {
+            order: 3;
+            flex: 0 0 100%;
+            @include playerCardStats;
+        }
 
         .stats {
+            @media screen and (min-width: $breakpoint992) {
+                flex: 1 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+                border-right: 1px solid $colorBorder;
+    
+                &:last-child {
+                    border-right: none;
+                }
+            }
 
             // .stats__name
             &__name {
-                font-size: 8px;
+                @media screen and (min-width: $breakpoint992) {
+                    display: none;
+                }
             }
         
             // .stats__value
             &__value {
-                font-size: 16px;
+                @media screen and (min-width: $breakpoint992) {
+                    margin-top: 0;
+                    text-align: center;
+                }
             }
         }
     }
 }
+
 
 .stats {
 

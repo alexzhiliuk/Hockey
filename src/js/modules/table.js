@@ -1,4 +1,5 @@
 function checkHorizontalScroll(element) {
+    if (!element.length) {return}
     const canScroll = element[0].scrollWidth > element[0].clientWidth;
     const isAtStart = element.scrollLeft() === 0;
     const isAtEnd = element.scrollLeft() + element[0].clientWidth >= element[0].scrollWidth - 1;
@@ -11,6 +12,7 @@ function checkHorizontalScroll(element) {
 }
 
 function toggleClasses(element, scrollInfo) {
+    if (!element.length) {return}
     if (scrollInfo.canScroll) {
         if (scrollInfo.isAtStart) {
             element.addClass("table_shadow_right").removeClass("table_shadow_left")
