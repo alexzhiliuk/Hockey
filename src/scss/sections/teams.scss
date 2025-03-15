@@ -1,0 +1,45 @@
+.teams {
+    $gap: clamp(10px, 3vw, 30px);
+    @include flexColumns(4, $gap);
+
+    @media screen and (max-width: $breakpoint1200)  {
+        @include flexColumns(3, $gap);
+    }
+    @media screen and (max-width: $breakpoint768)  {
+        @include flexColumns(2, $gap);
+    }
+    @media screen and (max-width: $breakpoint576)  {
+        @include flexColumns(1, $gap);
+    }
+}
+
+.team-card {
+
+    padding: clamp(10px, 2vw, 20px) clamp(15px, 2vw, 20px);
+    border-radius: 10px;
+    border: 1px solid $colorBorder;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &:hover {
+        color: $colorPrimary;
+    }
+
+    // .team-card__logo
+    &__logo {
+        width: clamp(60px, 9vw, 90px);
+        height: auto;
+        aspect-ratio: 1;
+        display: block;
+        object-fit: contain;
+    }
+
+    // .team-card__name
+    &__name {
+        font-weight: 700;
+        font-size: clamp(18px, 2.4vw, 24px);
+        line-height: 1.2;
+    }
+}

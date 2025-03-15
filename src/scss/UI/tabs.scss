@@ -6,6 +6,10 @@
     &_row {
         flex-direction: row;
         flex-wrap: wrap;
+
+        .search {
+            margin-left: auto;
+        }
     }
 }
 
@@ -90,6 +94,7 @@
 
         @media screen and (max-width: $breakpoint768) {
             width: 100vw;
+            min-width: 100vw;
             max-width: unset;
             padding: 0 $containerPadding;
             margin: 0 -#{$containerPadding};
