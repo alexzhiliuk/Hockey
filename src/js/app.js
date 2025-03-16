@@ -9,6 +9,7 @@ import * as newsList from './modules/newsList.js'
 import * as select from './modules/select.js'
 import * as search from './modules/search.js'
 import * as tournament from './modules/tournament.js'
+import * as team from './modules/team.js'
 // import * as mask from '../libs/phoneMask.js'
 
 // flsFunctions.isWebp()

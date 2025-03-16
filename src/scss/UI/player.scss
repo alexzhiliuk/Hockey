@@ -261,6 +261,73 @@
     }
 }
 
+.team-player {
+
+    padding: 15px;
+    border-radius: 10px;
+    background-color: $colorTableRow;
+
+    display: grid;
+    grid-template-columns: 60px 1fr 1fr auto;
+    grid-template-rows: 1.3fr 1fr;
+    column-gap: 15px;
+    row-gap: 8px;
+    align-items: center;
+
+    // .team-player__avatar
+    &__avatar {
+        grid-row: span 2;
+
+        img {
+            width: 60px;
+            aspect-ratio: 1;
+            height: auto;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    // .team-player__name
+    &__name {
+        grid-column: span 2;
+        font-size: 16px;
+        font-weight: 600;
+        align-self: end;
+    }
+
+    // .team-player__subtitle
+    &__subtitle {
+        grid-column: span 2;
+        font-size: 12px;
+        font-weight: 500;
+        color: $colorGray;
+        align-self: flex-start;
+    }
+
+    // .team-player__number
+    &__number {
+        grid-column: 4;
+        grid-row: 1 / 3;
+
+        .stats {
+            text-align: center;
+
+            // .stats__name
+            &__name {
+                font-weight: 500;
+                font-size: 7px;
+            }
+        
+            // .stats__value
+            &__value {
+                font-size: 30px;
+            }
+        }
+        
+    }
+}
+
 
 .stats {
 

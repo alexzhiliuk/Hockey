@@ -122,3 +122,33 @@
         }
     }
 }
+
+.staff {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(30px, 5vw, 50px);
+}
+
+.staff-group {
+    &__name {
+        font-size: clamp(10px, 1.4vw, 14px);
+        font-weight: 700;
+        color: $colorGray;
+        margin-bottom: clamp(15px, 2vw, 20px);
+    }
+}
+
+
+.staff-list {
+
+    @include flexColumns(4, clamp(10px, 2vw, 20px));
+    @media screen and (max-width: $breakpoint1200) {
+        @include flexColumns(3, clamp(10px, 2vw, 20px));
+    }
+    @media screen and (max-width: $breakpoint992) {
+        @include flexColumns(2, clamp(10px, 2vw, 20px));
+    }
+    @media screen and (max-width: $breakpoint576) {
+        @include flexColumns(1, clamp(10px, 2vw, 20px));
+    }
+}

@@ -36,8 +36,8 @@ $(".select__prev").click(function(e) {
     let prev = $(this).parents(".select").find("option:selected").prev()
     if (!prev.length) { return }
 
-    let value = next.val(),
-        text = next.text()
+    let value = prev.val(),
+        text = prev.text()
     
     $(this).parents(".select").find("select").val(value)
     $(this).parents(".select").find(".select__chosen").text(text)
