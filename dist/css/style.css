@@ -434,6 +434,11 @@ img {
   font-weight: 800;
 }
 
+.title-2 {
+  font-size: clamp(20px, 2.8vw, 28px);
+  font-weight: 800;
+}
+
 .small-title {
   font-size: 18px;
   font-weight: 800;
@@ -1321,24 +1326,24 @@ img {
   font-size: 16px;
 }
 
-.player-row {
+.player-row, .player-stats-row {
   display: flex;
   justify-content: space-between;
 }
 @media screen and (min-width: 991.98px) {
-  .player-row:nth-child(odd) {
+  .player-row:nth-child(odd), .player-stats-row:nth-child(odd) {
     background-color: #F9F9F9;
   }
-  .player-row > * {
+  .player-row > *, .player-stats-row > * {
     padding: 10px 20px;
     border-right: 1px solid #E6E9EC;
   }
-  .player-row > *:last-child {
+  .player-row > *:last-child, .player-stats-row > *:last-child {
     border-right: none;
   }
 }
 @media screen and (max-width: 991.98px) {
-  .player-row {
+  .player-row, .player-stats-row {
     background-color: #F9F9F9;
     flex-wrap: wrap;
     padding: 25px;
@@ -1408,13 +1413,13 @@ img {
     display: none;
   }
 }
-.player-row__stats {
+.player-row__stats, .player-stats-row__stats {
   flex: 0 0 70%;
   display: flex;
   padding: 0;
 }
 @media screen and (max-width: 991.98px) {
-  .player-row__stats {
+  .player-row__stats, .player-stats-row__stats {
     order: 3;
     flex: 0 0 100%;
     margin-top: auto;
@@ -1424,15 +1429,15 @@ img {
     gap: 5px;
     width: 100%;
   }
-  .player-row__stats .stats__name {
+  .player-row__stats .stats__name, .player-stats-row__stats .stats__name {
     font-size: 8px;
   }
-  .player-row__stats .stats__value {
+  .player-row__stats .stats__value, .player-stats-row__stats .stats__value {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 991.98px) {
-  .player-row__stats .stats {
+  .player-row__stats .stats, .player-stats-row__stats .stats {
     flex: 1 1;
     display: flex;
     align-items: center;
@@ -1440,17 +1445,17 @@ img {
     padding: 10px;
     border-right: 1px solid #E6E9EC;
   }
-  .player-row__stats .stats:last-child {
+  .player-row__stats .stats:last-child, .player-stats-row__stats .stats:last-child {
     border-right: none;
   }
 }
 @media screen and (min-width: 991.98px) {
-  .player-row__stats .stats__name {
+  .player-row__stats .stats__name, .player-stats-row__stats .stats__name {
     display: none;
   }
 }
 @media screen and (min-width: 991.98px) {
-  .player-row__stats .stats__value {
+  .player-row__stats .stats__value, .player-stats-row__stats .stats__value {
     margin-top: 0;
     text-align: center;
   }
@@ -2265,12 +2270,12 @@ img {
   }
 }
 
-.players-table__header {
+.players-table__header, .player-stats-table__header {
   height: 40px;
   display: flex;
   justify-content: flex-end;
 }
-.players-table__header > div {
+.players-table__header > div, .player-stats-table__header > div {
   text-align: center;
   text-transform: uppercase;
   font-weight: 600;
@@ -2280,38 +2285,38 @@ img {
   align-items: center;
   justify-content: center;
 }
-.players-table__header > div:nth-child(n+3) {
+.players-table__header > div:nth-last-child(-n+5), .player-stats-table__header > div:nth-last-child(-n+5) {
   flex: 0 0 14%;
 }
 @media screen and (max-width: 991.98px) {
-  .players-table__header {
+  .players-table__header, .player-stats-table__header {
     display: none;
   }
 }
 @media screen and (min-width: 991.98px) {
-  .players-table__body {
+  .players-table__body, .player-stats-table__body {
     border-radius: 10px;
     border: 1px solid #E6E9EC;
     overflow: hidden;
   }
 }
 @media screen and (max-width: 991.98px) {
-  .players-table__body {
+  .players-table__body, .player-stats-table__body {
     display: flex;
     flex-wrap: wrap;
     gap: clamp(10px, 2vw, 30px);
   }
-  .players-table__body > * {
+  .players-table__body > *, .player-stats-table__body > * {
     flex: 0 0 calc(50% - clamp(10px, 2vw, 30px) * 1 / 2);
   }
 }
 @media screen and (max-width: 575.98px) {
-  .players-table__body {
+  .players-table__body, .player-stats-table__body {
     display: flex;
     flex-wrap: wrap;
     gap: clamp(10px, 2vw, 30px);
   }
-  .players-table__body > * {
+  .players-table__body > *, .player-stats-table__body > * {
     flex: 0 0 calc(100% - clamp(10px, 2vw, 30px) * 0 / 1);
   }
 }
@@ -2494,6 +2499,242 @@ img {
   }
 }
 
+.player {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: clamp(20px, 4vw, 40px);
+}
+@media screen and (max-width: 575.98px) {
+  .player {
+    flex-direction: column;
+    align-items: center;
+  }
+  .player > * {
+    width: 100%;
+  }
+}
+.player__img {
+  width: clamp(210px, 17vw, 274px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.player__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.player__info {
+  flex: 1 1;
+}
+.player__name {
+  font-weight: 700;
+  font-size: clamp(24px, 3.2vw, 32px);
+  line-height: 1.2;
+}
+@media screen and (max-width: 575.98px) {
+  .player__name {
+    text-align: center;
+  }
+}
+.player__role {
+  margin-top: 4px;
+  font-size: clamp(14px, 1.6vw, 16px);
+  font-weight: 500;
+}
+@media screen and (max-width: 575.98px) {
+  .player__role {
+    text-align: center;
+  }
+}
+.player__team {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 16px;
+  font-size: clamp(18px, 2.2vw, 22px);
+  font-weight: 700;
+  color: #0055E9;
+}
+@media screen and (max-width: 575.98px) {
+  .player__team {
+    justify-content: center;
+  }
+}
+.player__team img {
+  width: clamp(50px, 10vw, 100px);
+  aspect-ratio: 1;
+  height: auto;
+  object-fit: contain;
+}
+@media screen and (min-width: 991.98px) {
+  .player__team img {
+    display: none;
+  }
+}
+.player__bio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  row-gap: 15px;
+  margin-top: 20px;
+}
+.player__bio > * {
+  flex: 0 0 calc(16.6666666667% - 16.6666666667px);
+}
+@media screen and (max-width: 1439.98px) {
+  .player__bio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .player__bio > * {
+    flex: 0 0 calc(33.3333333333% - 13.3333333333px);
+  }
+}
+@media screen and (max-width: 767.98px) {
+  .player__bio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .player__bio > * {
+    flex: 0 0 calc(50% - 7.5px);
+  }
+}
+.player__bio .stats {
+  white-space: nowrap;
+}
+.player__bio .stats__name {
+  font-size: clamp(12px, 1.4vw, 14px);
+  font-weight: 500;
+  text-transform: none;
+}
+.player__bio .stats__value {
+  font-size: clamp(14px, 1.6vw, 16px);
+  font-weight: 500;
+}
+.player__stats {
+  border-radius: 10px;
+  background-color: #F9F9F9;
+  padding: clamp(15px, 2vw, 20px) clamp(15px, 2.5vw, 25px);
+  margin-top: clamp(20px, 3vw, 30px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(20px, 4vw, 60px);
+  row-gap: 15px;
+}
+.player__stats > * {
+  flex: 0 0 calc(20% - clamp(20px, 4vw, 60px) * 4 / 5);
+}
+@media screen and (max-width: 1199.98px) {
+  .player__stats {
+    justify-content: space-between;
+  }
+  .player__stats > * {
+    flex: unset;
+  }
+}
+.player__stats .stats {
+  white-space: nowrap;
+}
+.player__stats .stats__name {
+  font-size: clamp(9px, 1.2vw, 12px);
+  font-weight: 500;
+}
+.player__stats .stats__value {
+  font-size: clamp(16px, 2.6vw, 26px);
+  font-weight: 700;
+}
+.player__team-logo {
+  width: clamp(210px, 17vw, 274px);
+  aspect-ratio: 1;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.player__team-logo img {
+  width: 73%;
+  height: auto;
+  display: block;
+}
+@media screen and (max-width: 991.98px) {
+  .player__team-logo {
+    display: none;
+  }
+}
+
+.player-stats-table__header > div:nth-last-child(n) {
+  flex: 1 1;
+}
+.player-stats-row {
+  font-size: clamp(14px, 1vw, 16px);
+  font-weight: 700;
+}
+@media screen and (min-width: 991.98px) {
+  .player-stats-row {
+    text-align: center;
+  }
+}
+.player-stats-row > * {
+  border-right: none;
+}
+@media screen and (min-width: 991.98px) {
+  .player-stats-row__cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 16px;
+  }
+}
+.player-stats-row__season {
+  flex: 1 1;
+}
+@media screen and (max-width: 991.98px) {
+  .player-stats-row__season {
+    order: 1;
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+}
+.player-stats-row__league {
+  flex: 1 1;
+  word-break: break-word;
+}
+@media screen and (max-width: 991.98px) {
+  .player-stats-row__league {
+    flex: 0 0 100%;
+    order: 3;
+    margin-bottom: 20px;
+    color: #757575;
+    font-weight: 500;
+    font-size: 12px;
+  }
+}
+.player-stats-row__team {
+  flex: 1 1;
+  word-break: break-word;
+}
+@media screen and (max-width: 991.98px) {
+  .player-stats-row__team {
+    order: 2;
+    justify-content: flex-end;
+    text-align: right;
+    font-weight: 600;
+  }
+}
+@media screen and (min-width: 991.98px) {
+  .player-stats-row__stats {
+    flex: 0 0 62.5%;
+  }
+}
+.player-stats-row__stats .stats {
+  border-right: none;
+}
 .matches-group__date {
   display: block;
   font-size: clamp(20px, 2.8vw, 28px);
