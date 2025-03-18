@@ -131,6 +131,10 @@
     &_playing {
         flex-direction: row;
         gap: clamp(20px, 3vw, 40px);
+        @media screen and (max-width: $breakpoint992) {
+            flex-wrap: wrap;
+            gap: clamp(10px, 2vw, 20px);
+        }
         & > * {
             flex: 0 0 calc(50% - clamp(20px, 3vw, 40px) / 2);
             @media screen and (max-width: $breakpoint992) {
@@ -213,8 +217,17 @@
                 border-radius: 0;
                 background-color: $colorWhite;
                 padding: 0;
+
                 & > * {
                     padding: 10px 20px;
+
+                    &:nth-child(3) {
+                        flex: 0 0 32%;
+                    }
+                    &:last-child {
+                        flex: 0 0 16%;
+                        margin-left: 0;
+                    }
                 }
     
                 display: flex;
@@ -243,17 +256,15 @@
                 // .team-player__subtitle
                 &__subtitle {
                     align-self: unset;
-                    flex: 0 0 32%;
                     margin-left: auto;
                     font-size: 16px;
                     font-weight: 600;
                     text-transform: none;
-                    color: $colorBlack
+                    color: $colorBlack;
                 }
     
                 // .team-player__number
                 &__number {
-                    flex: 0 0 16%;
     
                     .stats {
                         text-align: left;

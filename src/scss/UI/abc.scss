@@ -1,0 +1,35 @@
+.abc {
+
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    font-size: 26px;
+    font-weight: 700;
+    color: $colorGray;
+
+    @media screen and (max-width: $breakpoint768) {
+        display: none;
+    }
+
+    // .abc__item
+    &__item {
+
+        text-transform: uppercase;
+        cursor: pointer;
+
+        // .abc__item_active
+
+        &_active,
+        &:hover {
+            color: $colorBlack
+        }
+
+        // .abc__item_all
+
+        &_all {
+            padding-right: 20px;
+        }
+    }
+}

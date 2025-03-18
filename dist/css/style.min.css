@@ -1471,9 +1471,10 @@ img {
   column-gap: 15px;
   row-gap: 8px;
   align-items: center;
+  text-transform: capitalize;
 }
 .team-player__avatar {
-  grid-row: span 2;
+  grid-row: 1/4;
 }
 .team-player__avatar img {
   width: 60px;
@@ -1495,6 +1496,9 @@ img {
   font-weight: 500;
   color: #757575;
   align-self: flex-start;
+}
+.team-player__date {
+  color: #000000;
 }
 .team-player__number {
   grid-column: 4;
@@ -1519,6 +1523,31 @@ img {
 .stats__value {
   font-weight: 700;
   margin-top: 5px;
+}
+
+.abc {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 26px;
+  font-weight: 700;
+  color: #757575;
+}
+@media screen and (max-width: 767.98px) {
+  .abc {
+    display: none;
+  }
+}
+.abc__item {
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.abc__item_active, .abc__item:hover {
+  color: #000000;
+}
+.abc__item_all {
+  padding-right: 20px;
 }
 
 .header {
@@ -2330,6 +2359,12 @@ img {
   flex-direction: row;
   gap: clamp(20px, 3vw, 40px);
 }
+@media screen and (max-width: 991.98px) {
+  .staff_playing {
+    flex-wrap: wrap;
+    gap: clamp(10px, 2vw, 20px);
+  }
+}
 .staff_playing > * {
   flex: 0 0 calc(50% - clamp(20px, 3vw, 40px) / 2);
 }
@@ -2413,6 +2448,13 @@ img {
   .staff-team .staff-list .team-player > * {
     padding: 10px 20px;
   }
+  .staff-team .staff-list .team-player > *:nth-child(3) {
+    flex: 0 0 32%;
+  }
+  .staff-team .staff-list .team-player > *:last-child {
+    flex: 0 0 16%;
+    margin-left: 0;
+  }
   .staff-team .staff-list .team-player:nth-child(odd) {
     background-color: #F9F9F9;
   }
@@ -2429,15 +2471,11 @@ img {
   }
   .staff-team .staff-list .team-player__subtitle {
     align-self: unset;
-    flex: 0 0 32%;
     margin-left: auto;
     font-size: 16px;
     font-weight: 600;
     text-transform: none;
     color: #000000;
-  }
-  .staff-team .staff-list .team-player__number {
-    flex: 0 0 16%;
   }
   .staff-team .staff-list .team-player__number .stats {
     text-align: left;

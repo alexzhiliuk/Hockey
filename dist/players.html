@@ -26,7 +26,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20250318175428"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20250318175428"></script>
 
-    <title>Новости</title>
+    <title>Игроки</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js?_v=20250318175428"></script>
 </head>
@@ -118,142 +118,146 @@
         <div class="breadcrumbs">
     <div class="breadcrumbs__container container">
         <a href="index.html" class="breadcrumbs__item">Главная</a>
-        <a href="javascript:void(0)" class="breadcrumbs__item">Новости</a>
+        <a href="javascript:void(0)" class="breadcrumbs__item">Игроки</a>
     </div>
 </div>
 
         <main>            
             <section class="section container">
     
-    <h2 class="section__title title">Новости</h2>    
+    <h2 class="section__title title">Игроки</h2>    
     
     <div class="section__body">
-        <div class="select-group">
-            <div class="select select_month">
-                <div class="select__next"></div>
-                <div class="select__prev"></div>
-                <div class="select__chosen"></div>
-                <select name="" id="" hidden>
-                    <option value="1" selected>Январь</option>
-                    <option value="2">Февраль</option>
-                    <option value="3">Март</option>
-                    <option value="4">Апрель</option>
-                    <option value="5">Май</option>
-                    <option value="6">Июнь</option>
-                    <option value="7">Июль</option>
-                    <option value="8">Август</option>
-                    <option value="9">Сентябрь</option>
-                    <option value="10">Октябрь</option>
-                    <option value="11">Ноябрь</option>
-                    <option value="12">Декабрь</option>
-                </select>
+        <div class="tabs-group tabs-group_row">
+            <div class="abc">
+                <a href="" class="abc__item abc__item_active abc__item_all">все</a>
+                <a href="" class="abc__item">а</a>
+                <a href="" class="abc__item">б</a>
+                <a href="" class="abc__item">в</a>
+                <a href="" class="abc__item">г</a>
+                <a href="" class="abc__item">д</a>
+                <a href="" class="abc__item">е</a>
+                <a href="" class="abc__item">ж</a>
+                <a href="" class="abc__item">з</a>
+                <a href="" class="abc__item">и</a>
+                <a href="" class="abc__item">к</a>
+                <a href="" class="abc__item">л</a>
+                <a href="" class="abc__item">м</a>
+                <a href="" class="abc__item">н</a>
+                <a href="" class="abc__item">о</a>
+                <a href="" class="abc__item">п</a>
+                <a href="" class="abc__item">р</a>
+                <a href="" class="abc__item">с</a>
+                <a href="" class="abc__item">т</a>
+                <a href="" class="abc__item">у</a>
+                <a href="" class="abc__item">ф</a>
+                <a href="" class="abc__item">х</a>
+                <a href="" class="abc__item">ц</a>
+                <a href="" class="abc__item">ч</a>
+                <a href="" class="abc__item">ш</a>
+                <a href="" class="abc__item">щ</a>
+                <a href="" class="abc__item">э</a>
+                <a href="" class="abc__item">ю</a>
+                <a href="" class="abc__item">я</a>
             </div>
             <div class="search">
-                <input type="search" placeholder="Поиск">
+                <input type="search" placeholder="Поиск игрока">
                 <div class="search__icon" onclick="$(this).siblings('input').focus()"></div>
+                <div class="search-result">
+                    <a href="player.html" class="search-result__row">
+                        <img src="img/players/Avatar.png" alt="" width="40">
+                        <p>
+                            <mark>Шан</mark>тыка Алексей
+                        </p>
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="news-list">
-            <div class="news-list__flex">
-                <article class="news-card">
-                    <img src="img/teams/05.png" alt="" class="news-card__img" width="140">
-                    <time datetime="2023-10-01" class="news-card__date">01 октября 2024</time>
-                    <h3 class="news-card__title">Изменения в календаре Чемпионата</h3>
-                    <div class="news-card__content">
-                        <img src="img/teams/05.png" alt="" class="news-card__img" width="40">
-                        <div class="news-card__text">
-                            <p>
-                                Матч Первой лиги №15 "Бастион" - "Динамит" перенесен с 11 октября 2024 года на 21 февраля 2025 года. Место проведения матча - Олимпик-арена (малая площадка), время начала матча 19.10.
-                            </p>
-                            <p>
-                                Матч Первой лиги №71 "Микст" - "Бастион" перенесен с 21 февраля 2025 года на 18 октября 2024. Место проведения матча - Олимпик-арена (малая площадка), время начала матча 19.10.
-                            </p>
+        <div class="staff staff_playing">
+            <div class="staff-team staff-team_open">
+                <div class="staff-team__header">
+                    <div>Игрок</div>
+                    <div>Номер</div>
+                    <div>АМПЛУА</div>
+                </div>
+                <div class="staff-list">
+                    <a href="player.html" class="team-player">
+                        <div class="team-player__avatar">
+                            <img src="img/players/Avatar.png" alt="" width="60">
                         </div>
-                    </div>
-                </article>
-                <article class="news-card">
-                    <img src="img/teams/05.png" alt="" class="news-card__img" width="140">
-                    <time datetime="2023-10-01" class="news-card__date">01 октября 2024</time>
-                    <h3 class="news-card__title">Изменения в календаре Чемпионата</h3>
-                    <div class="news-card__content">
-                        <img src="img/teams/05.png" alt="" class="news-card__img" width="40">
-                        <div class="news-card__text">
-                            <p>
-                                Матч Первой лиги №15 "Бастион" - "Динамит" перенесен с 11 октября 2024 года на 21 февраля 2025 года. Место проведения матча - Олимпик-арена (малая площадка), время начала матча 19.10.
-                            </p>
-                            <p>
-                                Матч Первой лиги №71 "Микст" - "Бастион" перенесен с 21 февраля 2025 года на 18 октября 2024. Место проведения матча - Олимпик-арена (малая площадка), время начала матча 19.10.
-                            </p>
+                        <h3 class="team-player__name">Деревяго Сергей</h3>
+                        <h4 class="team-player__subtitle team-player__date">22.03.1992</h4>
+                        <h4 class="team-player__subtitle">вратарь</h4>
+                    </a>
+                    <a href="player.html" class="team-player">
+                        <div class="team-player__avatar">
+                            <img src="img/players/Avatar.png" alt="" width="60">
                         </div>
-                    </div>
-                </article>
-                <article class="news-card">
-                    <img src="img/teams/05.png" alt="" class="news-card__img" width="140">
-                    <time datetime="2023-10-01" class="news-card__date">01 октября 2024</time>
-                    <h3 class="news-card__title">Изменения в календаре Чемпионата</h3>
-                    <div class="news-card__content">
-                        <img src="img/teams/05.png" alt="" class="news-card__img" width="40">
-                        <div class="news-card__text">
-                            <p>
-                                Матч Первой лиги №15 "Бастион" - "Динамит" перенесен с 11 октября 2024 года на 21 февраля 2025 года. Место проведения матча - Олимпик-арена (малая площадка), время начала матча 19.10.
-                            </p>
-                            <p>
-                                Матч Первой лиги №71 "Микст" - "Бастион" перенесен с 21 февраля 2025 года на 18 октября 2024. Место проведения матча - Олимпик-арена (малая площадка), время начала матча 19.10.
-                            </p>
+                        <h3 class="team-player__name">Деревяго Сергей</h3>
+                        <h4 class="team-player__subtitle team-player__date">22.03.1992</h4>
+                        <h4 class="team-player__subtitle">вратарь</h4>
+                    </a>
+                    <a href="player.html" class="team-player">
+                        <div class="team-player__avatar">
+                            <img src="img/players/Avatar.png" alt="" width="60">
                         </div>
-                    </div>
-                </article>
-                <article class="news-card">
-                    <img src="img/teams/05.png" alt="" class="news-card__img" width="140">
-                    <time datetime="2023-10-01" class="news-card__date">01 октября 2024</time>
-                    <h3 class="news-card__title">Изменения в календаре Чемпионата</h3>
-                    <div class="news-card__content">
-                        <img src="img/teams/05.png" alt="" class="news-card__img" width="40">
-                        <div class="news-card__text">
-                            <p>
-                                Матч Первой лиги №15 "Бастион" - "Динамит" перенесен с 11 октября 2024 года на 21 февраля 2025 года. Место проведения матча - Олимпик-арена (малая площадка), время начала матча 19.10.
-                            </p>
-                            <p>
-                                Матч Первой лиги №71 "Микст" - "Бастион" перенесен с 21 февраля 2025 года на 18 октября 2024. Место проведения матча - Олимпик-арена (малая площадка), время начала матча 19.10.
-                            </p>
+                        <h3 class="team-player__name">Деревяго Сергей</h3>
+                        <h4 class="team-player__subtitle team-player__date">22.03.1992</h4>
+                        <h4 class="team-player__subtitle">вратарь</h4>
+                    </a>
+                    <a href="player.html" class="team-player">
+                        <div class="team-player__avatar">
+                            <img src="img/players/Avatar.png" alt="" width="60">
                         </div>
-                    </div>
-                </article>
-                <article class="news-card">
-                    <img src="img/teams/05.png" alt="" class="news-card__img" width="140">
-                    <time datetime="2023-10-01" class="news-card__date">01 октября 2024</time>
-                    <h3 class="news-card__title">Изменения в календаре Чемпионата</h3>
-                    <div class="news-card__content">
-                        <img src="img/teams/05.png" alt="" class="news-card__img" width="40">
-                        <div class="news-card__text">
-                            <p>
-                                Матч Первой лиги №15 "Бастион" - "Динамит" перенесен с 11 октября 2024 года на 21 февраля 2025 года. Место проведения матча - Олимпик-арена (малая площадка), время начала матча 19.10.
-                            </p>
-                            <p>
-                                Матч Первой лиги №71 "Микст" - "Бастион" перенесен с 21 февраля 2025 года на 18 октября 2024. Место проведения матча - Олимпик-арена (малая площадка), время начала матча 19.10.
-                            </p>
+                        <h3 class="team-player__name">Деревяго Сергей</h3>
+                        <h4 class="team-player__subtitle team-player__date">22.03.1992</h4>
+                        <h4 class="team-player__subtitle">вратарь</h4>
+                    </a>
+                </div>
+            </div>
+            <div class="staff-team staff-team_open">
+                <div class="staff-team__header">
+                    <div>Игрок</div>
+                    <div>Номер</div>
+                    <div>АМПЛУА</div>
+                </div>
+                <div class="staff-list">
+                    <a href="player.html" class="team-player">
+                        <div class="team-player__avatar">
+                            <img src="img/players/Avatar.png" alt="" width="60">
                         </div>
-                    </div>
-                </article>
-                <article class="news-card">
-                    <img src="img/teams/05.png" alt="" class="news-card__img" width="140">
-                    <time datetime="2023-10-01" class="news-card__date">01 октября 2024</time>
-                    <h3 class="news-card__title">Изменения в календаре Чемпионата</h3>
-                    <div class="news-card__content">
-                        <img src="img/teams/05.png" alt="" class="news-card__img" width="40">
-                        <div class="news-card__text">
-                            <p>
-                                Матч Первой лиги №15 "Бастион" - "Динамит" перенесен с 11 октября 2024 года на 21 февраля 2025 года. Место проведения матча - Олимпик-арена (малая площадка), время начала матча 19.10.
-                            </p>
-                            <p>
-                                Матч Первой лиги №71 "Микст" - "Бастион" перенесен с 21 февраля 2025 года на 18 октября 2024. Место проведения матча - Олимпик-арена (малая площадка), время начала матча 19.10.
-                            </p>
+                        <h3 class="team-player__name">Деревяго Сергей</h3>
+                        <h4 class="team-player__subtitle team-player__date">22.03.1992</h4>
+                        <h4 class="team-player__subtitle">вратарь</h4>
+                    </a>
+                    <a href="player.html" class="team-player">
+                        <div class="team-player__avatar">
+                            <img src="img/players/Avatar.png" alt="" width="60">
                         </div>
-                    </div>
-                </article>
+                        <h3 class="team-player__name">Деревяго Сергей</h3>
+                        <h4 class="team-player__subtitle team-player__date">22.03.1992</h4>
+                        <h4 class="team-player__subtitle">вратарь</h4>
+                    </a>
+                    <a href="player.html" class="team-player">
+                        <div class="team-player__avatar">
+                            <img src="img/players/Avatar.png" alt="" width="60">
+                        </div>
+                        <h3 class="team-player__name">Деревяго Сергей</h3>
+                        <h4 class="team-player__subtitle team-player__date">22.03.1992</h4>
+                        <h4 class="team-player__subtitle">вратарь</h4>
+                    </a>
+                    <a href="player.html" class="team-player">
+                        <div class="team-player__avatar">
+                            <img src="img/players/Avatar.png" alt="" width="60">
+                        </div>
+                        <h3 class="team-player__name">Деревяго Сергей</h3>
+                        <h4 class="team-player__subtitle team-player__date">22.03.1992</h4>
+                        <h4 class="team-player__subtitle">вратарь</h4>
+                    </a>
+                </div>
             </div>
         </div>
-        <button class="btn btn_center">Все новости</button>
+        <a href="#" class="btn btn_center">Показать еще</a>
     </div>
 </section>
         </main>

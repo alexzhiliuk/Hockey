@@ -273,10 +273,11 @@
     column-gap: 15px;
     row-gap: 8px;
     align-items: center;
+    text-transform: capitalize;
 
     // .team-player__avatar
     &__avatar {
-        grid-row: span 2;
+        grid-row: 1 / 4;
 
         img {
             width: 60px;
@@ -303,6 +304,9 @@
         font-weight: 500;
         color: $colorGray;
         align-self: flex-start;
+    }
+    &__date {
+        color: $colorBlack;
     }
 
     // .team-player__number
