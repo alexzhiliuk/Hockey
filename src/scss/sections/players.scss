@@ -127,6 +127,155 @@
     display: flex;
     flex-direction: column;
     gap: clamp(30px, 5vw, 50px);
+
+    &_playing {
+        flex-direction: row;
+        gap: clamp(20px, 3vw, 40px);
+        & > * {
+            flex: 0 0 calc(50% - clamp(20px, 3vw, 40px) / 2);
+            @media screen and (max-width: $breakpoint992) {
+                flex: 0 0 100%;
+            }
+        }
+    }
+}
+
+.staff-tabs {
+    @media screen and (min-width: $breakpoint992) {
+        display: none;
+    }
+    .tabs__item {
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: $colorBlack;
+        font-size: 16px;
+        flex: 1 1;
+    }
+}
+
+.staff-team {
+    @media screen and (max-width: $breakpoint992) {
+        display: none;
+
+        &_open {
+            display: block;
+        }
+    }
+    &__name {
+        font-size: 24px;
+        font-weight: 700;
+
+        margin-bottom: 20px;
+
+        @media screen and (max-width: $breakpoint992) {
+            display: none;
+        }
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+
+        & > * {
+            padding: 15px 20px;
+            flex: 1 1;
+
+            font-size: 10px;
+            font-weight: 600;
+            color: $colorGray;
+            text-transform: uppercase;
+
+            &:nth-child(2) {
+                flex: 0 0 32%;
+            }
+            &:nth-child(3) {
+                flex: 0 0 16%;
+            }
+        }
+
+        @media screen and (max-width: $breakpoint992) {
+            display: none;
+        }
+    }
+
+    @media screen and (min-width: $breakpoint992) {
+        .staff-list {
+            flex-direction: column;
+            gap: 0;
+            
+            border-radius: 10px;
+            border: 1px solid $colorBorder;
+            overflow: hidden;
+    
+            .team-player {
+                border-radius: 0;
+                background-color: $colorWhite;
+                padding: 0;
+                & > * {
+                    padding: 10px 20px;
+                }
+    
+                display: flex;
+                gap: 0;
+                
+    
+                &:nth-child(odd) {
+                    background-color: $colorTableRow;
+                }
+    
+                // .team-player__avatar
+                &__avatar {
+                    grid-row: span 1;                
+                }
+    
+                // .team-player__name
+                &__name {
+                    align-self: unset;
+                    padding-left: 0;
+                    font-size: 16px;
+                    font-weight: 600;
+                    text-transform: none;
+                    color: $colorBlack
+                }
+    
+                // .team-player__subtitle
+                &__subtitle {
+                    align-self: unset;
+                    flex: 0 0 32%;
+                    margin-left: auto;
+                    font-size: 16px;
+                    font-weight: 600;
+                    text-transform: none;
+                    color: $colorBlack
+                }
+    
+                // .team-player__number
+                &__number {
+                    flex: 0 0 16%;
+    
+                    .stats {
+                        text-align: left;
+    
+                        // .stats__name
+                        &__name {
+                            display: none;
+                        }
+                    
+                        // .stats__value
+                        &__value {
+                            font-size: 16px;
+                            font-weight: 600;
+                            text-transform: none;
+                            color: $colorBlack
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
 }
 
 .staff-group {
@@ -148,7 +297,7 @@
     @media screen and (max-width: $breakpoint992) {
         @include flexColumns(2, clamp(10px, 2vw, 20px));
     }
-    @media screen and (max-width: $breakpoint576) {
+    @media screen and (max-width: $breakpoint768) {
         @include flexColumns(1, clamp(10px, 2vw, 20px));
     }
 }

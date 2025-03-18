@@ -31,3 +31,10 @@ if ($(".team").length) {
         }
     })
 }
+
+$(".staff-tabs .tabs__item").click(function() {
+    let team = $(this).data("staff-team")
+
+    $(`.staff-team`).removeClass("staff-team_open")
+    $(`.staff-team[data-staff-team=${team}]`).addClass("staff-team_open")
+})
