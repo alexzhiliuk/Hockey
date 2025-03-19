@@ -42,12 +42,18 @@
 
         display: flex;
         align-items: center;
-        gap: clamp(20px, 3vw, 30px);
+        justify-content: space-between;
+        gap: 10px;
 
+        @media screen and (min-width: $breakpoint768) {
+            flex: 0 0 195px;
+        }
         @media screen and (max-width: $breakpoint1200) and (min-width: $breakpoint768) {
             flex-direction: column-reverse;
             align-items: flex-start;
             gap: 5px;
+
+            flex: 0 0 120px;
         }
     }
 
@@ -89,12 +95,15 @@
     // .match-card__result
     &__result {
         margin-left: auto;
-        margin-right: auto;
 
         display: flex;
         align-items: center;
         gap: clamp(10px, 3vw, 30px);
+        flex: 0 0 67%;
 
+        @media screen and (max-width: $breakpoint992) {
+            flex: 0 0 55%;
+        }
         @media screen and (max-width: $breakpoint768) {
             flex: 0 0 100%;
             justify-content: center;
@@ -110,6 +119,8 @@
         display: flex;
         align-items: center;
         gap: 15px;
+
+        flex: 1 1;
 
         &:first-of-type {
             flex-direction: row-reverse;
@@ -146,5 +157,12 @@
         display: flex;
         align-items: center;
         gap: 5px;
+
+        flex: 0 0 5%;
+        white-space: nowrap;
+
+        &_none {
+            color: #CCCCCC;
+        }
     }
 }

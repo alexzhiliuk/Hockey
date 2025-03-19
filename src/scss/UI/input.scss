@@ -206,6 +206,10 @@ $choiceHeight: 42px;
     }
 
     min-width: min(320px, 100%);
+    @media screen and (max-width: $breakpoint576)  {
+        min-width: none;
+        width: 100%;
+    }
     position: relative;
     &__icon {
         content: '';

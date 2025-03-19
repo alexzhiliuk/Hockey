@@ -780,6 +780,12 @@ img {
   border-radius: 10px;
   background: url(../img/icons/search-cross.svg) center center/contain no-repeat;
 }
+@media screen and (max-width: 575.98px) {
+  .search {
+    min-width: none;
+    width: 100%;
+  }
+}
 .search__icon {
   content: "";
   position: absolute;
@@ -2812,13 +2818,20 @@ img {
   font-weight: 700;
   display: flex;
   align-items: center;
-  gap: clamp(20px, 3vw, 30px);
+  justify-content: space-between;
+  gap: 10px;
+}
+@media screen and (min-width: 767.98px) {
+  .match-card__datetime {
+    flex: 0 0 195px;
+  }
 }
 @media screen and (max-width: 1199.98px) and (min-width: 767.98px) {
   .match-card__datetime {
     flex-direction: column-reverse;
     align-items: flex-start;
     gap: 5px;
+    flex: 0 0 120px;
   }
 }
 .match-card__stadium {
@@ -2845,10 +2858,15 @@ img {
 }
 .match-card__result {
   margin-left: auto;
-  margin-right: auto;
   display: flex;
   align-items: center;
   gap: clamp(10px, 3vw, 30px);
+  flex: 0 0 67%;
+}
+@media screen and (max-width: 991.98px) {
+  .match-card__result {
+    flex: 0 0 55%;
+  }
 }
 @media screen and (max-width: 767.98px) {
   .match-card__result {
@@ -2863,6 +2881,7 @@ img {
   display: flex;
   align-items: center;
   gap: 15px;
+  flex: 1 1;
 }
 .match-card__team:first-of-type {
   flex-direction: row-reverse;
@@ -2893,6 +2912,11 @@ img {
   display: flex;
   align-items: center;
   gap: 5px;
+  flex: 0 0 5%;
+  white-space: nowrap;
+}
+.match-card__score_none {
+  color: #CCCCCC;
 }
 
 .documents-section {

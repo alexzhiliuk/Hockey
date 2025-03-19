@@ -53,6 +53,7 @@ $(function() {
             });
         } else {
             $(".sortedTable").tablesorter({
+                sortReset: true,
                 headers: {
                     ".table__num": { sorter: false } // Отключаем сортировку для первой колонки (индекс 0)
                 },
@@ -68,4 +69,13 @@ $(function() {
     $(window).resize(function() {
         initTablesorter();
     });
+
+    $(".tablesorter-header").click(function() {
+        
+        console.log("click")
+        if ($(this).hasClass("tablesorter-headerDesc")) {
+            element.trigger("sortReset")
+        }
+        
+    })
 });
