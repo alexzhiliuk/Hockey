@@ -82,12 +82,12 @@
     // .team__logo
     &__logo {
         width: clamp(100px, 25vw, 250px);
-        height: auto;
-        aspect-ratio: 1;
+        height: clamp(100px, 25vw, 250px);
         padding: clamp(10px, 2.5vw, 25px);
         background: $colorTableRow;
 
         float: left;
+        overflow: hidden;
         margin-right: 40px;
         border-radius: 10px;
 

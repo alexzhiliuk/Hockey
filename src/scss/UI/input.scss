@@ -37,6 +37,11 @@ $choiceHeight: 42px;
         }
     }
 
+    &__chosen {
+        @include textOverflow(1);
+        padding-right: 20px;
+    }
+
     // .select__choices
     &__choices {
         position: absolute;
@@ -53,6 +58,8 @@ $choiceHeight: 42px;
         flex-direction: column;
         gap: 5px;
         background-color: $colorWhite;
+        filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.15));
+        -webkit-filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.15));
 
 
         max-height: calc(($choiceHeight + 5px) * 6 + 5px);
@@ -83,10 +90,14 @@ $choiceHeight: 42px;
         flex-shrink: 0;
 
         border-radius: 6px;
-        background-color: $colorTableRow;
+        background-color: $colorWhite;
 
         cursor: pointer;
         &:hover {
+            background-color: $colorTableRow;
+        }
+        &_active,
+        &_active:hover {
             background-color: rgba($color: $colorPrimary, $alpha: .2);
         }
     }
@@ -103,6 +114,7 @@ $choiceHeight: 42px;
             content: '';
             display: block;
             width: clamp(20px, 2.4vw, 24px);
+            flex-shrink: 0;
             aspect-ratio: 1;
             background: url(../img/icons/Calendar.svg) center center / contain no-repeat;
         }
@@ -155,13 +167,18 @@ $choiceHeight: 42px;
     .search {
         margin-left: auto;
     }
+    .select {
+        min-width: unset;
+    }
 
     @include flexColumns(4, clamp(10px, 3vw, 30px));
 
-    @media screen and (max-width: $breakpoint768)  {
+    @media screen and (max-width: 1090px)  {
         @include flexColumns(2, clamp(10px, 3vw, 30px));
-        .select {
-            min-width: unset;
+    }
+    @media screen and (max-width: $breakpoint768) {
+        & > * {
+            flex-grow: 1;
         }
     }
     @media screen and (max-width: $breakpoint576)  {

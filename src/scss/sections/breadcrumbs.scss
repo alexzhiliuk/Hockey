@@ -3,7 +3,7 @@
     background-color: $colorBreadcrumbs;
     padding: clamp(10px, 2vw, 20px) 0;
 
-    font-size: clamp(12px, 1.6vwm 16px);
+    font-size: clamp(12px, 1.6vw, 16px);
     font-weight: 500;
     
 
@@ -12,7 +12,7 @@
         display: flex;
         align-items: center;
         flex-wrap: wrap;
-        gap: 16px;
+        gap: 1em;
     }
 
     // .breadcrumbs__item

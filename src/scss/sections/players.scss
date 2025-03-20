@@ -521,6 +521,7 @@
 .player-stats-row {
 
     @extend .player-row;
+    padding: clamp(15px, 2.5vw, 25px);;
 
     @media screen and (min-width: $breakpoint992) {
         text-align: center;

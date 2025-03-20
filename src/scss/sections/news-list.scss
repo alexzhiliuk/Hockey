@@ -92,9 +92,16 @@ $newsCardPadding: clamp(20px, 4vw, 40px);
             }
         }
     }
+    
+    @media screen and (max-width: $breakpoint1400) {
+        aspect-ratio: unset;
+    }
 
     @media screen and (max-width: $breakpoint768) {
-        aspect-ratio: unset;
+        min-height: 40vw;
+    }
+    @media screen and (max-width: $breakpoint576) {
+        min-height: min(80vw, 300px);
     }
     
 
@@ -122,6 +129,8 @@ $newsCardPadding: clamp(20px, 4vw, 40px);
         font-size: clamp(16px, 2.2vw, 22px);
 
         margin-top: 10px;
+
+        @include textOverflow(3);
     }
 
     // .news-card__content

@@ -111,10 +111,16 @@
                 </div>
             </div>
             <div class="team__col">
-                <div class="team__picture">
+                <a href="@img/teams/full-team.png" class="team__picture">
                     <img src="@img/teams/full-team.png" width="810" alt="">
-                </div>
+                </a>
             </div>
         </div>
     </div>
 </section>
+<script>
+    $(".team__picture").magnificPopup({
+        type: 'image'
+        // other options
+    });
+</script>

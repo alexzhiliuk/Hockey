@@ -8,8 +8,14 @@ $('.news-card').click(function(event){
 
 
 $(".news-card").click(function() {
-    $(this).addClass("news-card_active")
+    let activeClass = "news-card_active"
+    if ($(this).hasClass(activeClass)) {
+        $(this).removeClass(activeClass)
+    } else {
+        $(".news-card").removeClass(activeClass)
+        $(this).addClass(activeClass)
+    }
 })
-$(".news-card").on("mouseleave", function() {
-    $(this).removeClass("news-card_active")
-})
+// $(".news-card").on("mouseleave", function() {
+//     $(this).removeClass("news-card_active")
+// })

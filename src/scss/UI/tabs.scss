@@ -9,6 +9,10 @@
 
         .search {
             margin-left: auto;
+
+            @media screen and (max-width: 1090px) {
+                flex-grow: 1;
+            }
         }
     }
 }
@@ -58,8 +62,11 @@
             }
         }
 
-        &_active,
         &:hover {
+            background-color: $colorTableRow;
+        }
+        &_active,
+        &_active:hover {
             color: $colorWhite;
             background-color: $colorPrimary;
 
@@ -72,6 +79,9 @@
             padding: 10px;
             flex: 1 1;
             height: unset;
+        }
+        @media screen and (max-width: $breakpoint576) {
+            flex: 1 1 fit-content;
         }
     }
 

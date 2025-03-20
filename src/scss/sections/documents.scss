@@ -51,13 +51,21 @@
     overflow: hidden;
 
     display: flex;
-    gap: clamp(20px, 4vw, 50px);
+    @include flexColumns(4, clamp(20px, 4vw, 50px));
     justify-content: space-between;
-    flex-wrap: wrap;
+
+    @media screen and (max-width: $breakpoint1024) {
+        @include flexColumns(2, clamp(20px, 4vw, 50px));
+    }
+
+    @media screen and (max-width: $breakpoint576) {
+        @include flexColumns(1, clamp(20px, 4vw, 50px));
+    }
 
     font-size: 15px;
     font-weight: 600;
 
+    
     // .documents__list
     &__list {
         display: flex;

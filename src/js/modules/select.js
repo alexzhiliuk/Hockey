@@ -10,7 +10,10 @@ $(".select").each(function(i, select) {
             'data-value': $(option).val()
         })
 
-        if (option.selected) { selectedText = $(option).text()}
+        if (option.selected) { 
+            selectedText = $(option).text()
+            li.addClass("select__choice_active")
+        }
 
         ul.append(li)
     })
@@ -21,6 +24,9 @@ $(".select").each(function(i, select) {
 
         $(this).parents(".select").find("select").val(value)
         $(this).parents(".select").find(".select__chosen").text(text)
+        
+        $(this).siblings(".select__choice").removeClass("select__choice_active")
+        $(this).addClass("select__choice_active")
     })
 
     ul.insertAfter($(select).find(".select__chosen"))
@@ -28,7 +34,16 @@ $(".select").each(function(i, select) {
 })
 
 $(".select").click(function() {
-    $(this).toggleClass("select_open")
+    let openClass = "select_open"
+
+    console.log(this, $(this).hasClass(openClass))
+
+    if ($(this).hasClass(openClass)) {
+        $(this).removeClass(openClass)
+    } else {
+        $(".select").removeClass(openClass)
+        $(this).addClass(openClass)
+    }
 })
 
 $(".select__prev").click(function(e) {
@@ -41,6 +56,8 @@ $(".select__prev").click(function(e) {
     
     $(this).parents(".select").find("select").val(value)
     $(this).parents(".select").find(".select__chosen").text(text)
+    $(this).parents(".select").find(`.select__choice`).removeClass("select__choice_active")
+    $(this).parents(".select").find(`.select__choice[data-value=${value}]`).addClass("select__choice_active")
 })
 
 $(".select__next").click(function(e) {
@@ -53,4 +70,6 @@ $(".select__next").click(function(e) {
     
     $(this).parents(".select").find("select").val(value)
     $(this).parents(".select").find(".select__chosen").text(text)
+    $(this).parents(".select").find(`.select__choice`).removeClass("select__choice_active")
+    $(this).parents(".select").find(`.select__choice[data-value=${value}]`).addClass("select__choice_active")
 })

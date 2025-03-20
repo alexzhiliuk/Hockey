@@ -14,26 +14,37 @@ $headerHeight: clamp(68px, 9vw, 90px);
         &_open {
             height: 100dvh;
             width: 100vw;
-            
-            overflow-y: auto;
-            overflow-x: clip;
 
             @include removeScrollbar;
 
             .header__container {
 
-                min-height: 100%;
+                height: 100%;
 
                 align-items: flex-start;
-                flex-wrap: wrap;
+                flex-direction: column;
             }
 
             .header__nav {
                 order: 3;
-                flex: 0 0 100%;
+                flex-shrink: 1;
+                width: 100%;
                 margin-top: auto;
-                margin-bottom: auto;
+                margin-bottom: 20px;
                 display: block;
+                overflow: hidden;
+
+                position: relative;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -2px;
+                    left: 0;
+                    right: 0;
+                    height: 20px;
+                    pointer-events: none;
+                    background: linear-gradient(180deg, rgba(0,34,61,0) 0%, rgba(0,34,61,1) 100%);
+                }
             }
 
             .header__menu {
@@ -41,6 +52,11 @@ $headerHeight: clamp(68px, 9vw, 90px);
                 gap: clamp(40px, 6vw, 60px);
                 font-size: 24px;
                 font-weight: 800;
+
+                overflow-y: auto;
+                height: 100%;
+                padding-bottom: 20px;
+                @include removeScrollbar;
                 
                 li {
                     &::after {
@@ -52,7 +68,7 @@ $headerHeight: clamp(68px, 9vw, 90px);
             .header__socials {
                 display: flex;
                 order: 4;
-                flex: 0 0 100%;
+                width: 100%;
                 margin-top: auto;
                 margin-bottom: auto;
             }

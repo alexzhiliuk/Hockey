@@ -3,8 +3,8 @@
 export function drawLine() {
     try {
 
-        let a = $(".tournament-grid__stage_semifinal .tournament-card").offset().top,
-            b = $(".tournament-grid__stage_semifinal .tournament-card").offset().top
+        let a = $(".tournament-grid__stage_semifinal .tournament-card:first-child").offset().top,
+            b = $(".tournament-grid__stage_semifinal .tournament-card:last-child").offset().top
         
         $(".tournament-grid__stage_semifinal").css("--line-height", b - a)
         
