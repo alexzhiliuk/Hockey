@@ -6,6 +6,9 @@
 
     @media screen and (max-width: $breakpoint576) {
         @include width100vw;
+        .mobile-hidden {
+            display: none;
+        }
     }
 
     &_shadow {
@@ -154,7 +157,6 @@
         padding-left: 10px;
     }
 }
-
 
 @media screen and (min-width: $breakpoint576) {
     .tablesorter {

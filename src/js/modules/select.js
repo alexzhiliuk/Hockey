@@ -36,8 +36,6 @@ $(".select").each(function(i, select) {
 $(".select").click(function() {
     let openClass = "select_open"
 
-    console.log(this, $(this).hasClass(openClass))
-
     if ($(this).hasClass(openClass)) {
         $(this).removeClass(openClass)
     } else {

@@ -11,6 +11,7 @@ import * as search from './modules/search.js'
 import * as tournament from './modules/tournament.js'
 import * as team from './modules/team.js'
 import * as documents from './modules/documents.js'
+import * as up from './modules/up.js'
 import * as slider from './../libs/draggable/slider.js'
 // import * as mask from '../libs/phoneMask.js'
 

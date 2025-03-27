@@ -104,6 +104,17 @@ $cardHeight: 170px;
                     }
                 }
             }
+            @media screen and (max-width: $breakpoint768) {
+                .tournament-card_3nd {
+                    display: none;
+                }
+            }
+        }
+
+        &_third {
+            @media screen and (min-width: $breakpoint768) {
+                display: none;
+            }
         }
         
         @media screen and (max-width: $breakpoint768) {

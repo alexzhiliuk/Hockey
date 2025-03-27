@@ -50,4 +50,40 @@ $(".tabs__item").click(function() {
     $("[data-tab-content]").css("display", "")
     $("[data-tab-content]").each(changeTab)
 
+    var tabsContainer = $(this).parents('.tabs');
+    var containerWidth = tabsContainer.width();
+    var containerScrollLeft = tabsContainer.scrollLeft();
+
+    var tabOffset = $(this).offset().left - tabsContainer.offset().left + containerScrollLeft;
+    var tabWidth = $(this).outerWidth();
+
+    // Вычисляем новую позицию прокрутки
+    var newScrollPosition;
+    var rightEdge = containerScrollLeft + containerWidth;
+    var tabRightEdge = tabOffset + tabWidth;
+    var tabLeftEdge = tabOffset;
+    
+    // Если таб близко к правому краю (например, в последней трети видимой области)
+    if (tabRightEdge > rightEdge - containerWidth/3) {
+      // Прокручиваем так, чтобы таб был у левого края с небольшим отступом
+      newScrollPosition = tabOffset - 20;
+    } 
+    // Если таб близко к левому краю (например, в первой трети видимой области)
+    else if (tabLeftEdge < containerScrollLeft + containerWidth/3) {
+      // Прокручиваем так, чтобы таб был у правого края
+      newScrollPosition = tabOffset - containerWidth + tabWidth + 20;
+    }
+    else {
+      // Иначе оставляем текущую позицию
+      newScrollPosition = containerScrollLeft;
+    }
+    
+    // Ограничиваем прокрутку минимальным и максимальным значениями
+    newScrollPosition = Math.max(0, Math.min(newScrollPosition, tabsContainer[0].scrollWidth - containerWidth));
+    
+    // Анимированная прокрутка
+    tabsContainer.stop().animate({
+      scrollLeft: newScrollPosition
+    }, 300);
+
 })

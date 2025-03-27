@@ -101,6 +101,24 @@ $headerHeight: clamp(68px, 9vw, 90px);
         }
     }
 
+    &__title {
+        display: none;
+
+        @media screen and (max-width: $burgerBreakpoint) {
+            display: block;
+            color: $colorWhite;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-align: center;
+            font-size: clamp(12px, 1.8vw, 18px);
+
+            position: absolute;
+            left: 50%;
+            top: calc($headerHeight / 2);
+            translate: -50% -50%;
+        }
+    }
+
     // .header__nav
     &__nav {
 
