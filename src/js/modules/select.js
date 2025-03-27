@@ -71,3 +71,11 @@ $(".select__next").click(function(e) {
     $(this).parents(".select").find(`.select__choice`).removeClass("select__choice_active")
     $(this).parents(".select").find(`.select__choice[data-value=${value}]`).addClass("select__choice_active")
 })
+
+// Удалить
+$(".select_month").each(function(i, select) {
+    $(select).find("select").val("5")
+    $(select).find(".select__chosen").text("Май")
+    $(select).find(`.select__choice`).removeClass("select__choice_active")
+    $(select).find(`.select__choice[data-value=5]`).addClass("select__choice_active")
+})
