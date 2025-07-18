@@ -270,6 +270,12 @@ $cardHeight: 170px;
             color: #CCCCCC;
         }
     }
+
+    &_3nd {
+        @media screen and (max-width: $breakpoint768) {
+            bottom: unset !important;
+        }
+    }
 }
 
 .tournament-tabs {

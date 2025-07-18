@@ -2324,6 +2324,11 @@ img {
 .tournament-card_unknown .tournament-card__score-value {
   color: #CCCCCC;
 }
+@media screen and (max-width: 767.98px) {
+  .tournament-card_3nd {
+    bottom: unset !important;
+  }
+}
 
 @media screen and (min-width: 767.98px) {
   .tournament-tabs {

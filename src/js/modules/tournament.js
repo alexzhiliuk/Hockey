@@ -20,6 +20,18 @@ export function drawLine() {
 
 drawLine()
 
+function thirdCardResize() {
+    if ($(window).innerWidth() < 768) {
+        $(".tournament-card_3nd").css("width", "")
+        return
+    }
+    let width = $(".tournament-grid__stage").innerWidth()
+    $(".tournament-card_3nd").css("width", `${width}px`)
+}
+
+thirdCardResize()
+
+$(window).resize(thirdCardResize)
 
 $(".tournament-tabs .tabs__item").click(function() {
     let stage = $(this).data("stage")
