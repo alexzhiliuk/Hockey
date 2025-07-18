@@ -138,6 +138,10 @@ $cardHeight: 170px;
 
     position: relative;
 
+    @media screen and (min-width: $breakpoint768) {
+        width: 510px;
+    }
+
     @media screen and (max-width: $breakpoint768) {
         width: 100%;
         justify-content: space-between;
@@ -272,6 +276,9 @@ $cardHeight: 170px;
     }
 
     &_3nd {
+        @media screen and (min-width: $breakpoint768) {
+            width: 510px;
+        }
         @media screen and (max-width: $breakpoint768) {
             bottom: unset !important;
         }

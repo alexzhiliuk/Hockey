@@ -2208,6 +2208,11 @@ img {
   min-width: fit-content;
   position: relative;
 }
+@media screen and (min-width: 767.98px) {
+  .tournament-card {
+    width: 510px;
+  }
+}
 @media screen and (max-width: 767.98px) {
   .tournament-card {
     width: 100%;
@@ -2323,6 +2328,11 @@ img {
 }
 .tournament-card_unknown .tournament-card__score-value {
   color: #CCCCCC;
+}
+@media screen and (min-width: 767.98px) {
+  .tournament-card_3nd {
+    width: 510px;
+  }
 }
 @media screen and (max-width: 767.98px) {
   .tournament-card_3nd {
