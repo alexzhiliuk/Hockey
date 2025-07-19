@@ -2076,33 +2076,36 @@ img {
   background-clip: content-box;
 }
 
-.tournament-grid {
-  display: grid;
-  gap: 30px;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding-top: 36px;
+.tournament-grid-wrapper {
   position: relative;
   overflow-x: auto;
   width: 100%;
-  padding-bottom: 20px;
   margin-bottom: -20px;
 }
-.tournament-grid_1_8 {
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-.tournament-grid::-webkit-scrollbar {
+.tournament-grid-wrapper::-webkit-scrollbar {
   background: #ECECEC;
   width: 10px;
   height: 10px;
   padding: 0;
   border-radius: 10px;
 }
-.tournament-grid::-webkit-scrollbar-thumb {
+.tournament-grid-wrapper::-webkit-scrollbar-thumb {
   background-color: #0055E9;
   width: 10px;
   height: 10px;
   border-radius: 10px;
   background-clip: content-box;
+}
+
+.tournament-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-top: 36px;
+  padding-bottom: 20px;
+}
+.tournament-grid_1_8 {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 @media screen and (max-width: 767.98px) {
   .tournament-grid {
@@ -2210,7 +2213,8 @@ img {
 }
 @media screen and (min-width: 767.98px) {
   .tournament-card {
-    width: 510px;
+    width: 500px;
+    min-width: 380px;
   }
 }
 @media screen and (max-width: 767.98px) {
@@ -2252,7 +2256,7 @@ img {
   display: flex;
   align-items: center;
   gap: 16px;
-  width: 300px;
+  max-width: 300px;
 }
 .tournament-card__team img {
   width: clamp(30px, 5vw, 50px);
@@ -2273,6 +2277,7 @@ img {
   font-size: clamp(20px, 2.4vw, 24px);
   font-weight: 700;
   display: flex;
+  justify-content: flex-end;
 }
 @media screen and (max-width: 767.98px) {
   .tournament-card__scores {
@@ -2331,7 +2336,7 @@ img {
 }
 @media screen and (min-width: 767.98px) {
   .tournament-card_3nd {
-    width: 510px;
+    width: 500px;
   }
 }
 @media screen and (max-width: 767.98px) {

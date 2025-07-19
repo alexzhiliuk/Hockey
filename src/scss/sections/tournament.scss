@@ -1,5 +1,15 @@
 $cardHeight: 170px;
 
+.tournament-grid-wrapper {
+    position: relative;
+
+    overflow-x: auto;
+    width: 100%;
+    margin-bottom: -20px;
+
+    @include scollbar;
+}
+
 .tournament-grid {
 
     $tournamentGridGap: 30px;
@@ -12,13 +22,7 @@ $cardHeight: 170px;
     }
     padding-top: 36px;
 
-    position: relative;
-
-    overflow-x: auto;
-    width: 100%;
     padding-bottom: 20px;
-    margin-bottom: -20px;
-    @include scollbar;
 
     @media screen and (max-width: $breakpoint768) {
         grid-template-columns: 1fr;
@@ -139,7 +143,8 @@ $cardHeight: 170px;
     position: relative;
 
     @media screen and (min-width: $breakpoint768) {
-        width: 510px;
+        width: 500px;
+        min-width: 380px;
     }
 
     @media screen and (max-width: $breakpoint768) {
@@ -185,7 +190,7 @@ $cardHeight: 170px;
         align-items: center;
         gap: 16px;
 
-        width: 300px;
+        max-width: 300px;
 
         img {
             width: clamp(30px, 5vw, 50px);
@@ -210,6 +215,7 @@ $cardHeight: 170px;
         font-weight: 700;
         
         display: flex;
+        justify-content: flex-end;
 
         @media screen and (max-width: $breakpoint768) {
             gap: 10px;
@@ -277,7 +283,7 @@ $cardHeight: 170px;
 
     &_3nd {
         @media screen and (min-width: $breakpoint768) {
-            width: 510px;
+            width: 500px;
         }
         @media screen and (max-width: $breakpoint768) {
             bottom: unset !important;
